@@ -1,23 +1,32 @@
-# Instructions pour Claude
+# Mawjoud — Nuit de l'Info
+Objectif : app web légère (3G) pour trouver, signaler et suivre les points d'eau à Nouakchott. FR/AR (RTL).
 
-## Principes généraux
+## Stack
+- Front : HTML/CSS/JS pur, seule lib = Leaflet. Déployé sur Vercel. Page < 500 Ko.
+- Back : Python FastAPI + psycopg (SQL paramétré). Déployé sur Render.
+- Base : PostgreSQL via DATABASE_URL (jamais SQLite).
 
-- Examinez la structure du dépôt et les fichiers existants avant de proposer ou d’effectuer des changements.
-- Respectez les conventions, l’architecture et le style déjà utilisés dans le projet.
-- Effectuez des changements ciblés et évitez les modifications sans rapport avec la demande.
-- N’ajoutez pas de dépendance sans nécessité ; expliquez pourquoi si une dépendance est requise.
-- Ne prétendez pas qu’une commande ou un test a réussi si vous ne l’avez pas exécuté.
+## Dossiers
+- backend/ : main.py, db.py, schema.sql, seed.sql, routers/, ai.py, tests/
+- frontend/ : index.html, report.html, admin.html, conseils.html, js/, css/, i18n/
+- docs/ : FONCTIONNALITES.md, SECURITE.md, GREENIT.md
 
-## Vérification
+## Données
+- points(id, nom, type[puits|borne|citerne], quartier, lat, lon, etat[ok|faible|panne], maj_le)
+- signalements(id, point_id, type[panne|eau_trouble|faible_debit|autre], texte, photo_b64, quartier, urgence 0-100, statut[ouvert|repare], cree_le)
 
-- Repérez les commandes de test, de lint et de formatage dans les fichiers du projet, puis exécutez les vérifications pertinentes après les changements.
-- Si aucune configuration ou commande n’existe encore, indiquez-le plutôt que d’en inventer une.
+## Règles
+- Ne modifier que les fichiers cités dans la tâche. Pas de refonte, pas de nouvelle dépendance sans demande.
+- Code simple, commentaires courts en français. Ne pas générer de documentation.
+- SQL toujours paramétré. Secrets dans .env uniquement (DATABASE_URL, ADMIN_PASSWORD).
+- Tout texte visible passe par i18n (clés fr/ar), jamais en dur dans le HTML/JS.
+- Photos compressées côté client, 80 Ko maximum.
+- Réponses courtes : résumer en 3 lignes ce qui a changé.
 
-## Sécurité
+## Commandes
+- Back : cd backend && uvicorn main:app --reload (port 8000)
+- Test : curl localhost:8000/health ; pytest -q backend
+- Front : cd frontend && python -m http.server 5500 (API_URL dans js/config.js)
 
-- Ne placez pas de secrets, jetons ou identifiants dans le dépôt.
-- Signalez les risques de sécurité pertinents et privilégiez les pratiques sûres.
-
-## Contexte du projet
-
-Aucune technologie ni commande propre au projet n’est définie pour le moment. Mettez à jour ces instructions lorsque le projet sera initialisé.
+## Git
+- Une branche par groupe, petits commits, jamais de push direct sur main.
