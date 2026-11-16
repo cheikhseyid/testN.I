@@ -1,0 +1,41 @@
+nom,type,quartier,lat,lon,etat,potable
+Borne-fontaine Tevragh Zeina 1,borne,Tevragh Zeina,18.103815,-15.980297,ok,true
+Puits Tevragh Zeina 2,puits,Tevragh Zeina,18.100748,-15.971088,ok,false
+Puits Tevragh Zeina 3,puits,Tevragh Zeina,18.107801,-15.971604,ok,true
+Borne-fontaine Tevragh Zeina 4,borne,Tevragh Zeina,18.101692,-15.983026,panne,true
+Borne-fontaine Tevragh Zeina 5,borne,Tevragh Zeina,18.109823,-15.970207,faible,true
+Citerne Ksar 1,citerne,Ksar,18.104131,-15.951678,faible,true
+Borne-fontaine Ksar 2,borne,Ksar,18.103678,-15.954723,faible,true
+Borne-fontaine Ksar 3,borne,Ksar,18.101382,-15.947175,ok,true
+Borne-fontaine Ksar 4,borne,Ksar,18.093,-15.94811,ok,true
+Borne-fontaine Ksar 5,borne,Ksar,18.095427,-15.950528,faible,true
+Puits Teyarett 1,puits,Teyarett,18.131634,-15.945925,ok,false
+Borne-fontaine Teyarett 2,borne,Teyarett,18.132756,-15.948217,faible,true
+Citerne Teyarett 3,citerne,Teyarett,18.133271,-15.943384,ok,true
+Puits Teyarett 4,puits,Teyarett,18.129941,-15.938949,ok,false
+Puits Toujounine 1,puits,Toujounine,18.084386,-15.894,ok,false
+Puits Toujounine 2,puits,Toujounine,18.08243,-15.895454,panne,true
+Borne-fontaine Toujounine 3,borne,Toujounine,18.077998,-15.894831,panne,true
+Borne-fontaine Toujounine 4,borne,Toujounine,18.085963,-15.901063,faible,true
+Borne-fontaine Dar Naim 1,borne,Dar Naim,18.118581,-15.907945,ok,true
+Puits Dar Naim 2,puits,Dar Naim,18.117527,-15.91165,ok,true
+Borne-fontaine Dar Naim 3,borne,Dar Naim,18.116342,-15.913447,ok,true
+Puits Dar Naim 4,puits,Dar Naim,18.121194,-15.910476,faible,false
+Puits Dar Naim 5,puits,Dar Naim,18.118512,-15.90924,panne,false
+Borne-fontaine Sebkha 1,borne,Sebkha,18.069109,-15.980786,faible,true
+Puits Sebkha 2,puits,Sebkha,18.075076,-15.969394,ok,false
+Borne-fontaine Sebkha 3,borne,Sebkha,18.072108,-15.98151,ok,true
+Borne-fontaine Sebkha 4,borne,Sebkha,18.076783,-15.975893,panne,true
+Puits El Mina 1,puits,El Mina,18.043262,-15.958651,faible,false
+Citerne El Mina 2,citerne,El Mina,18.053859,-15.963615,ok,true
+Borne-fontaine El Mina 3,borne,El Mina,18.042566,-15.966918,ok,true
+Citerne El Mina 4,citerne,El Mina,18.052295,-15.968648,panne,true
+Puits Arafat 1,puits,Arafat,18.050103,-15.929753,faible,false
+Citerne Arafat 2,citerne,Arafat,18.062692,-15.932542,ok,true
+Puits Arafat 3,puits,Arafat,18.062256,-15.937688,ok,false
+Borne-fontaine Arafat 4,borne,Arafat,18.057492,-15.926499,ok,true
+Citerne Arafat 5,citerne,Arafat,18.059574,-15.930342,ok,true
+Borne-fontaine Riyad 1,borne,Riyad,18.018586,-15.942596,ok,true
+Borne-fontaine Riyad 2,borne,Riyad,18.025595,-15.945679,ok,true
+Puits Riyad 3,puits,Riyad,18.013294,-15.944245,ok,true
+Borne-fontaine Riyad 4,borne,Riyad,18.013101,-15.94209,ok,true

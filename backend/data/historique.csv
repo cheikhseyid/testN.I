@@ -1,0 +1,401 @@
+point_nom,type,texte,urgence,score_urgence,statut,cree_le,repare_le
+Citerne Ksar 1,autre,Couvercle de citerne manquant,basse,0.29,repare,2026-04-06T07:07:00Z,2026-04-07T07:13:00Z
+Borne-fontaine Dar Naim 1,autre,,moyenne,0.48,repare,2026-04-06T08:18:00Z,2026-04-07T12:18:00Z
+Borne-fontaine Tevragh Zeina 1,panne,Borne fermée,haute,0.89,repare,2026-04-06T15:10:00Z,2026-04-08T20:22:00Z
+Citerne Arafat 5,faible_debit,Très faible débit,basse,0.08,repare,2026-04-06T19:54:00Z,2026-04-07T00:42:00Z
+Puits Toujounine 2,panne,Borne fermée,haute,0.82,repare,2026-04-08T08:12:00Z,2026-04-09T23:30:00Z
+Puits Toujounine 2,eau_trouble,,haute,0.8,repare,2026-04-08T11:51:00Z,2026-04-08T23:09:00Z
+Citerne El Mina 2,eau_trouble,,haute,0.77,repare,2026-04-08T11:56:00Z,2026-04-09T02:26:00Z
+Citerne Arafat 5,panne,,moyenne,0.59,repare,2026-04-09T08:23:00Z,2026-04-10T08:41:00Z
+Borne-fontaine Dar Naim 3,panne,,haute,0.83,repare,2026-04-09T10:18:00Z,2026-04-10T17:54:00Z
+Puits Riyad 3,faible_debit,Très faible débit,moyenne,0.45,repare,2026-04-09T14:32:00Z,2026-04-10T01:20:00Z
+Puits Riyad 3,panne,Robinet cassé,haute,0.92,repare,2026-04-09T18:18:00Z,2026-04-10T07:00:00Z
+Citerne Arafat 2,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.69,repare,2026-04-09T20:56:00Z,2026-04-10T09:08:00Z
+Borne-fontaine Sebkha 4,panne,Plus une goutte depuis ce matin,haute,0.81,repare,2026-04-10T08:08:00Z,2026-04-11T21:14:00Z
+Borne-fontaine Arafat 4,panne,,haute,0.75,repare,2026-04-10T08:17:00Z,2026-04-10T21:23:00Z
+Citerne El Mina 2,faible_debit,Pression faible le soir,basse,0.36,repare,2026-04-10T12:17:00Z,2026-04-10T19:23:00Z
+Puits Toujounine 1,faible_debit,Il faut 20 minutes pour un bidon,haute,0.71,repare,2026-04-10T16:06:00Z,2026-04-11T03:06:00Z
+Borne-fontaine Riyad 4,faible_debit,,basse,0.1,repare,2026-04-10T17:43:00Z,2026-04-10T22:37:00Z
+Puits Arafat 1,faible_debit,Pression faible le soir,moyenne,0.49,repare,2026-04-11T07:51:00Z,2026-04-11T16:57:00Z
+Puits Dar Naim 2,faible_debit,,basse,0.36,repare,2026-04-11T17:23:00Z,2026-04-12T19:23:00Z
+Puits Dar Naim 5,faible_debit,Il faut 20 minutes pour un bidon,haute,0.94,repare,2026-04-11T18:07:00Z,2026-04-12T04:31:00Z
+Puits Dar Naim 5,panne,Borne fermée,moyenne,0.54,repare,2026-04-11T18:54:00Z,2026-04-13T09:42:00Z
+Borne-fontaine Dar Naim 3,panne,,moyenne,0.45,repare,2026-04-11T19:25:00Z,2026-04-14T14:25:00Z
+Puits Toujounine 1,panne,Pompe en panne,haute,0.81,repare,2026-04-12T18:48:00Z,2026-04-15T22:18:00Z
+Puits Teyarett 1,faible_debit,Il faut 20 minutes pour un bidon,haute,0.86,repare,2026-04-13T07:05:00Z,2026-04-13T22:35:00Z
+Puits Toujounine 1,eau_trouble,Eau marron,moyenne,0.69,repare,2026-04-13T12:12:00Z,2026-04-13T22:12:00Z
+Citerne Arafat 5,eau_trouble,Mauvaise odeur,basse,0.33,repare,2026-04-13T13:17:00Z,2026-04-13T15:59:00Z
+Citerne El Mina 4,eau_trouble,Eau trouble avec dépôt,moyenne,0.64,repare,2026-04-13T16:56:00Z,2026-04-14T07:02:00Z
+Citerne Ksar 1,autre,File d'attente très longue,moyenne,0.53,repare,2026-04-13T20:00:00Z,2026-04-14T11:48:00Z
+Borne-fontaine Dar Naim 3,faible_debit,Il faut 20 minutes pour un bidon,haute,0.8,repare,2026-04-13T21:18:00Z,2026-04-15T08:06:00Z
+Borne-fontaine Riyad 4,autre,File d'attente très longue,moyenne,0.41,repare,2026-04-14T06:11:00Z,2026-04-15T01:29:00Z
+Borne-fontaine Arafat 4,panne,Pompe en panne,moyenne,0.54,repare,2026-04-14T07:02:00Z,2026-04-16T01:26:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Très faible débit,moyenne,0.4,repare,2026-04-14T10:19:00Z,2026-04-15T04:19:00Z
+Puits Dar Naim 4,panne,Plus une goutte depuis ce matin,haute,0.83,repare,2026-04-14T12:54:00Z,2026-04-16T01:48:00Z
+Borne-fontaine Tevragh Zeina 4,faible_debit,,basse,0.39,repare,2026-04-14T15:10:00Z,2026-04-14T23:04:00Z
+Puits Arafat 1,autre,Fuite autour de la borne,moyenne,0.48,repare,2026-04-15T06:02:00Z,2026-04-18T02:26:00Z
+Puits Toujounine 2,autre,Couvercle de citerne manquant,basse,0.06,repare,2026-04-15T08:54:00Z,2026-04-16T17:00:00Z
+Puits Tevragh Zeina 3,faible_debit,Pression faible le soir,moyenne,0.56,repare,2026-04-15T11:26:00Z,2026-04-16T10:44:00Z
+Puits Tevragh Zeina 2,panne,Plus une goutte depuis ce matin,haute,0.71,repare,2026-04-15T12:06:00Z,2026-04-16T14:00:00Z
+Citerne Arafat 2,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.57,repare,2026-04-16T11:02:00Z,2026-04-16T21:38:00Z
+Puits Dar Naim 5,panne,,haute,0.74,repare,2026-04-16T12:08:00Z,2026-04-17T07:38:00Z
+Citerne El Mina 4,eau_trouble,Eau trouble avec dépôt,moyenne,0.62,repare,2026-04-16T14:07:00Z,2026-04-16T18:49:00Z
+Citerne Arafat 2,faible_debit,Très faible débit,moyenne,0.62,repare,2026-04-16T14:10:00Z,2026-04-16T22:40:00Z
+Borne-fontaine Arafat 4,panne,Robinet cassé,haute,0.84,repare,2026-04-16T15:14:00Z,2026-04-18T04:02:00Z
+Borne-fontaine Toujounine 4,autre,Couvercle de citerne manquant,basse,0.22,repare,2026-04-16T16:44:00Z,2026-04-17T20:14:00Z
+Borne-fontaine Dar Naim 1,eau_trouble,Eau trouble avec dépôt,haute,0.91,repare,2026-04-16T18:25:00Z,2026-04-16T23:43:00Z
+Citerne Arafat 5,autre,File d'attente très longue,moyenne,0.67,repare,2026-04-17T14:18:00Z,2026-04-18T21:18:00Z
+Borne-fontaine Toujounine 3,eau_trouble,,moyenne,0.47,repare,2026-04-17T17:14:00Z,2026-04-17T23:20:00Z
+Borne-fontaine Dar Naim 1,eau_trouble,,moyenne,0.68,repare,2026-04-17T18:01:00Z,2026-04-18T21:07:00Z
+Borne-fontaine Toujounine 3,panne,,basse,0.18,repare,2026-04-17T18:30:00Z,2026-04-18T08:18:00Z
+Puits Arafat 3,panne,Borne fermée,haute,0.83,repare,2026-04-18T13:10:00Z,2026-04-19T14:34:00Z
+Borne-fontaine Arafat 4,faible_debit,Très faible débit,haute,0.77,repare,2026-04-18T19:35:00Z,2026-04-19T21:35:00Z
+Borne-fontaine Riyad 4,panne,,moyenne,0.47,repare,2026-04-19T08:23:00Z,2026-04-19T21:53:00Z
+Citerne Arafat 2,faible_debit,Pression faible le soir,moyenne,0.48,repare,2026-04-19T09:26:00Z,2026-04-19T14:50:00Z
+Puits Dar Naim 4,eau_trouble,Eau marron,moyenne,0.47,repare,2026-04-19T13:06:00Z,2026-04-20T07:24:00Z
+Borne-fontaine El Mina 3,autre,Fuite autour de la borne,basse,0.06,repare,2026-04-19T16:05:00Z,2026-04-20T23:05:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Pression faible le soir,haute,0.88,repare,2026-04-19T19:55:00Z,2026-04-20T01:55:00Z
+Citerne Arafat 5,autre,,basse,0.15,repare,2026-04-19T20:11:00Z,2026-04-20T21:23:00Z
+Puits Tevragh Zeina 2,faible_debit,Il faut 20 minutes pour un bidon,basse,0.22,repare,2026-04-20T08:41:00Z,2026-04-21T11:29:00Z
+Citerne El Mina 2,faible_debit,,haute,0.84,repare,2026-04-20T17:21:00Z,2026-04-22T16:39:00Z
+Borne-fontaine Sebkha 1,autre,Fuite autour de la borne,basse,0.31,repare,2026-04-21T11:29:00Z,2026-04-22T19:53:00Z
+Borne-fontaine Riyad 2,faible_debit,Pression faible le soir,basse,0.06,repare,2026-04-21T21:04:00Z,2026-04-22T12:22:00Z
+Puits Teyarett 1,eau_trouble,,moyenne,0.69,repare,2026-04-22T07:11:00Z,2026-04-22T11:11:00Z
+Puits Dar Naim 5,autre,Couvercle de citerne manquant,moyenne,0.54,repare,2026-04-23T07:07:00Z,2026-04-25T02:31:00Z
+Borne-fontaine Dar Naim 1,eau_trouble,Eau trouble avec dépôt,haute,0.75,repare,2026-04-23T08:36:00Z,2026-04-24T00:36:00Z
+Borne-fontaine Riyad 4,autre,Couvercle de citerne manquant,moyenne,0.47,repare,2026-04-23T16:21:00Z,2026-04-24T09:15:00Z
+Puits El Mina 1,autre,Couvercle de citerne manquant,basse,0.22,repare,2026-04-23T17:57:00Z,2026-04-24T08:15:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Très faible débit,moyenne,0.66,repare,2026-04-24T08:29:00Z,2026-04-24T21:59:00Z
+Borne-fontaine Arafat 4,panne,Pompe en panne,haute,0.8,repare,2026-04-24T13:08:00Z,2026-04-25T10:38:00Z
+Puits Toujounine 1,faible_debit,Pression faible le soir,moyenne,0.53,repare,2026-04-24T18:44:00Z,2026-04-25T03:38:00Z
+Borne-fontaine Riyad 2,autre,File d'attente très longue,basse,0.19,repare,2026-04-24T19:48:00Z,2026-04-26T14:24:00Z
+Borne-fontaine Arafat 4,panne,,haute,0.71,repare,2026-04-24T20:23:00Z,2026-04-27T09:41:00Z
+Citerne Arafat 5,faible_debit,Pression faible le soir,haute,0.82,repare,2026-04-24T20:34:00Z,2026-04-25T21:46:00Z
+Citerne Teyarett 3,eau_trouble,Eau trouble avec dépôt,moyenne,0.41,repare,2026-04-24T21:53:00Z,2026-04-25T07:05:00Z
+Borne-fontaine Sebkha 4,faible_debit,Il faut 20 minutes pour un bidon,basse,0.07,repare,2026-04-25T08:46:00Z,2026-04-27T02:28:00Z
+Puits Tevragh Zeina 3,panne,Robinet cassé,basse,0.22,repare,2026-04-25T09:52:00Z,2026-04-27T05:04:00Z
+Borne-fontaine Sebkha 4,panne,Pompe en panne,haute,0.93,repare,2026-04-26T08:41:00Z,2026-04-26T21:05:00Z
+Borne-fontaine Riyad 4,faible_debit,,moyenne,0.59,repare,2026-04-26T10:58:00Z,2026-04-26T20:52:00Z
+Citerne Teyarett 3,eau_trouble,Eau marron,haute,0.86,repare,2026-04-26T11:43:00Z,2026-04-28T10:43:00Z
+Puits Arafat 3,autre,Couvercle de citerne manquant,basse,0.25,ouvert,2026-04-26T13:43:00Z,
+Borne-fontaine Sebkha 4,panne,,moyenne,0.58,repare,2026-04-26T18:37:00Z,2026-04-27T19:37:00Z
+Borne-fontaine Dar Naim 3,panne,,moyenne,0.62,repare,2026-04-26T20:14:00Z,2026-04-29T04:26:00Z
+Borne-fontaine Dar Naim 1,panne,,moyenne,0.54,repare,2026-04-26T20:26:00Z,2026-04-28T13:02:00Z
+Borne-fontaine Ksar 5,panne,Robinet cassé,haute,0.76,repare,2026-04-27T06:07:00Z,2026-04-29T16:31:00Z
+Borne-fontaine El Mina 3,panne,,haute,0.77,repare,2026-04-27T07:42:00Z,2026-04-28T14:06:00Z
+Borne-fontaine Dar Naim 1,panne,,basse,0.27,repare,2026-04-27T08:33:00Z,2026-04-28T16:09:00Z
+Borne-fontaine Toujounine 4,panne,Borne fermée,haute,0.72,repare,2026-04-27T10:21:00Z,2026-04-28T17:39:00Z
+Borne-fontaine Toujounine 3,eau_trouble,Eau marron,haute,0.74,repare,2026-04-27T11:44:00Z,2026-04-27T22:02:00Z
+Borne-fontaine Ksar 2,faible_debit,Pression faible le soir,basse,0.33,repare,2026-04-27T13:41:00Z,2026-04-28T01:41:00Z
+Puits Dar Naim 2,autre,,basse,0.11,repare,2026-04-27T14:58:00Z,2026-04-28T05:10:00Z
+Puits El Mina 1,panne,,haute,0.86,repare,2026-04-27T15:11:00Z,2026-04-29T19:41:00Z
+Citerne Arafat 2,panne,Pompe en panne,moyenne,0.41,repare,2026-04-27T16:20:00Z,2026-04-30T01:38:00Z
+Puits Teyarett 4,panne,,haute,0.79,repare,2026-04-27T17:53:00Z,2026-05-01T22:23:00Z
+Borne-fontaine Dar Naim 3,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.56,repare,2026-04-28T06:41:00Z,2026-04-29T12:41:00Z
+Borne-fontaine Sebkha 4,eau_trouble,Mauvaise odeur,haute,0.86,repare,2026-04-28T07:29:00Z,2026-04-29T03:05:00Z
+Puits Dar Naim 5,eau_trouble,Mauvaise odeur,haute,0.72,repare,2026-04-28T08:32:00Z,2026-04-28T18:56:00Z
+Borne-fontaine Ksar 4,autre,File d'attente très longue,haute,0.92,repare,2026-04-28T13:58:00Z,2026-04-29T14:34:00Z
+Borne-fontaine Dar Naim 3,panne,Pompe en panne,haute,0.81,repare,2026-04-28T15:37:00Z,2026-04-30T01:55:00Z
+Borne-fontaine Teyarett 2,eau_trouble,Eau trouble avec dépôt,moyenne,0.47,repare,2026-04-29T07:33:00Z,2026-04-30T08:51:00Z
+Puits Toujounine 1,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.52,repare,2026-04-29T09:16:00Z,2026-04-29T15:52:00Z
+Citerne Ksar 1,faible_debit,Il faut 20 minutes pour un bidon,basse,0.37,repare,2026-04-29T09:53:00Z,2026-04-30T05:29:00Z
+Borne-fontaine Dar Naim 1,autre,Couvercle de citerne manquant,moyenne,0.49,repare,2026-04-29T13:50:00Z,2026-04-30T05:32:00Z
+Borne-fontaine Ksar 5,panne,Robinet cassé,basse,0.12,repare,2026-04-29T18:19:00Z,2026-05-03T18:19:00Z
+Puits Arafat 3,eau_trouble,,basse,0.29,repare,2026-04-29T18:48:00Z,2026-04-30T02:42:00Z
+Borne-fontaine Dar Naim 3,faible_debit,Pression faible le soir,basse,0.06,repare,2026-04-29T19:56:00Z,2026-04-30T03:56:00Z
+Borne-fontaine Sebkha 4,panne,Pompe en panne,haute,0.83,repare,2026-04-30T06:28:00Z,2026-05-01T15:16:00Z
+Puits El Mina 1,eau_trouble,Mauvaise odeur,haute,0.8,repare,2026-04-30T07:58:00Z,2026-04-30T20:28:00Z
+Borne-fontaine Dar Naim 1,eau_trouble,,haute,0.75,repare,2026-04-30T14:40:00Z,2026-05-01T02:10:00Z
+Borne-fontaine Dar Naim 3,panne,Robinet cassé,haute,0.84,repare,2026-04-30T17:44:00Z,2026-05-01T20:02:00Z
+Borne-fontaine Sebkha 4,faible_debit,Pression faible le soir,moyenne,0.45,repare,2026-04-30T17:45:00Z,2026-05-01T01:51:00Z
+Puits Toujounine 2,eau_trouble,,haute,0.8,repare,2026-04-30T18:22:00Z,2026-04-30T23:58:00Z
+Borne-fontaine Sebkha 3,autre,Couvercle de citerne manquant,basse,0.24,repare,2026-04-30T18:38:00Z,2026-05-03T21:14:00Z
+Puits Arafat 3,faible_debit,,basse,0.16,repare,2026-04-30T20:45:00Z,2026-05-01T08:51:00Z
+Puits Dar Naim 5,panne,Borne fermée,moyenne,0.68,repare,2026-05-01T07:54:00Z,2026-05-08T04:30:00Z
+Puits Arafat 1,panne,Plus une goutte depuis ce matin,basse,0.11,repare,2026-05-01T11:34:00Z,2026-05-02T08:34:00Z
+Puits Riyad 3,eau_trouble,Mauvaise odeur,moyenne,0.41,repare,2026-05-01T15:21:00Z,2026-05-02T03:21:00Z
+Puits Arafat 3,panne,,moyenne,0.66,repare,2026-05-02T08:35:00Z,2026-05-04T14:17:00Z
+Puits Tevragh Zeina 2,panne,Plus une goutte depuis ce matin,haute,0.72,repare,2026-05-02T11:45:00Z,2026-05-03T22:09:00Z
+Borne-fontaine Sebkha 4,faible_debit,,moyenne,0.47,repare,2026-05-02T11:51:00Z,2026-05-03T23:21:00Z
+Borne-fontaine Sebkha 3,autre,Couvercle de citerne manquant,haute,0.74,repare,2026-05-02T14:11:00Z,2026-05-03T07:41:00Z
+Puits Arafat 1,faible_debit,,basse,0.16,repare,2026-05-02T16:46:00Z,2026-05-04T19:28:00Z
+Borne-fontaine Riyad 4,autre,,moyenne,0.6,repare,2026-05-02T17:07:00Z,2026-05-03T11:13:00Z
+Puits Teyarett 1,eau_trouble,Mauvaise odeur,basse,0.11,repare,2026-05-02T18:42:00Z,2026-05-03T08:12:00Z
+Borne-fontaine Tevragh Zeina 1,autre,Couvercle de citerne manquant,moyenne,0.44,repare,2026-05-03T06:44:00Z,2026-05-04T11:08:00Z
+Puits Arafat 1,faible_debit,Pression faible le soir,haute,0.87,repare,2026-05-03T09:25:00Z,2026-05-03T22:55:00Z
+Puits Arafat 3,panne,,haute,0.75,repare,2026-05-03T09:50:00Z,2026-05-04T09:02:00Z
+Puits Dar Naim 4,eau_trouble,Mauvaise odeur,basse,0.12,repare,2026-05-03T09:51:00Z,2026-05-04T03:21:00Z
+Borne-fontaine El Mina 3,eau_trouble,Eau trouble avec dépôt,moyenne,0.58,repare,2026-05-03T10:49:00Z,2026-05-03T21:01:00Z
+Puits Arafat 3,autre,,basse,0.09,ouvert,2026-05-03T12:51:00Z,
+Puits Arafat 3,autre,Fuite autour de la borne,moyenne,0.69,repare,2026-05-03T13:41:00Z,2026-05-05T02:23:00Z
+Borne-fontaine Teyarett 2,panne,Robinet cassé,moyenne,0.51,repare,2026-05-03T15:01:00Z,2026-05-04T07:13:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Pression faible le soir,basse,0.25,repare,2026-05-03T20:09:00Z,2026-05-04T16:21:00Z
+Puits Toujounine 2,eau_trouble,Eau trouble avec dépôt,moyenne,0.48,repare,2026-05-03T20:17:00Z,2026-05-04T05:35:00Z
+Borne-fontaine Dar Naim 3,panne,Pompe en panne,haute,0.83,repare,2026-05-04T06:11:00Z,2026-05-05T17:11:00Z
+Citerne Teyarett 3,panne,Plus une goutte depuis ce matin,basse,0.27,repare,2026-05-04T08:29:00Z,2026-05-07T01:11:00Z
+Borne-fontaine Dar Naim 3,panne,Robinet cassé,haute,0.79,repare,2026-05-04T09:56:00Z,2026-05-05T09:20:00Z
+Borne-fontaine Riyad 4,panne,Plus une goutte depuis ce matin,haute,0.76,repare,2026-05-04T14:15:00Z,2026-05-05T11:51:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Pression faible le soir,haute,0.7,ouvert,2026-05-04T15:10:00Z,
+Borne-fontaine Teyarett 2,panne,Pompe en panne,moyenne,0.46,repare,2026-05-04T20:10:00Z,2026-05-06T00:04:00Z
+Puits Dar Naim 5,autre,,moyenne,0.47,repare,2026-05-05T09:53:00Z,2026-05-06T13:05:00Z
+Puits Dar Naim 5,faible_debit,,moyenne,0.47,repare,2026-05-05T12:29:00Z,2026-05-07T18:47:00Z
+Borne-fontaine Riyad 4,panne,Robinet cassé,basse,0.21,repare,2026-05-05T17:57:00Z,2026-05-08T16:45:00Z
+Borne-fontaine Tevragh Zeina 5,faible_debit,Il faut 20 minutes pour un bidon,basse,0.17,repare,2026-05-05T18:22:00Z,2026-05-11T02:28:00Z
+Borne-fontaine El Mina 3,eau_trouble,,moyenne,0.5,repare,2026-05-05T21:21:00Z,2026-05-06T03:57:00Z
+Borne-fontaine Ksar 3,panne,,haute,0.92,repare,2026-05-06T14:26:00Z,2026-05-08T06:38:00Z
+Puits Teyarett 4,panne,Borne fermée,basse,0.1,repare,2026-05-06T15:30:00Z,2026-05-07T18:06:00Z
+Borne-fontaine Tevragh Zeina 5,faible_debit,Il faut 20 minutes pour un bidon,haute,0.91,repare,2026-05-06T15:58:00Z,2026-05-07T15:04:00Z
+Citerne Arafat 2,panne,,haute,0.93,repare,2026-05-06T17:05:00Z,2026-05-08T22:05:00Z
+Citerne El Mina 2,faible_debit,,moyenne,0.61,repare,2026-05-06T19:18:00Z,2026-05-07T01:48:00Z
+Borne-fontaine Sebkha 4,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.47,repare,2026-05-06T19:54:00Z,2026-05-07T03:36:00Z
+Puits Dar Naim 4,panne,Robinet cassé,haute,0.89,repare,2026-05-07T06:20:00Z,2026-05-08T05:14:00Z
+Puits Riyad 3,faible_debit,Très faible débit,moyenne,0.66,repare,2026-05-07T06:47:00Z,2026-05-08T02:17:00Z
+Borne-fontaine Toujounine 3,panne,Pompe en panne,moyenne,0.64,repare,2026-05-07T07:33:00Z,2026-05-08T09:39:00Z
+Citerne Arafat 2,faible_debit,Très faible débit,moyenne,0.52,ouvert,2026-05-07T10:07:00Z,
+Puits Tevragh Zeina 2,faible_debit,Il faut 20 minutes pour un bidon,haute,0.84,repare,2026-05-07T11:32:00Z,2026-05-07T21:08:00Z
+Puits Dar Naim 4,panne,,moyenne,0.64,repare,2026-05-07T14:28:00Z,2026-05-11T07:28:00Z
+Borne-fontaine Ksar 5,faible_debit,Il faut 20 minutes pour un bidon,haute,0.77,repare,2026-05-07T20:38:00Z,2026-05-08T11:08:00Z
+Puits Arafat 3,eau_trouble,Mauvaise odeur,haute,0.86,repare,2026-05-07T21:44:00Z,2026-05-08T07:50:00Z
+Puits Riyad 3,faible_debit,Pression faible le soir,basse,0.08,repare,2026-05-08T06:09:00Z,2026-05-09T07:21:00Z
+Puits Toujounine 1,faible_debit,Pression faible le soir,moyenne,0.54,repare,2026-05-08T07:34:00Z,2026-05-09T05:40:00Z
+Puits Dar Naim 5,autre,Couvercle de citerne manquant,basse,0.07,repare,2026-05-08T10:39:00Z,2026-05-08T16:45:00Z
+Puits Dar Naim 4,eau_trouble,Mauvaise odeur,haute,0.71,repare,2026-05-08T11:27:00Z,2026-05-09T07:33:00Z
+Borne-fontaine Riyad 1,faible_debit,Très faible débit,basse,0.09,ouvert,2026-05-08T11:36:00Z,
+Puits Riyad 3,eau_trouble,Eau trouble avec dépôt,moyenne,0.52,repare,2026-05-08T12:49:00Z,2026-05-09T03:01:00Z
+Puits Teyarett 4,eau_trouble,Mauvaise odeur,moyenne,0.56,repare,2026-05-08T16:08:00Z,2026-05-09T03:38:00Z
+Puits Arafat 3,panne,Pompe en panne,haute,0.94,repare,2026-05-08T18:02:00Z,2026-05-09T22:26:00Z
+Borne-fontaine Tevragh Zeina 5,eau_trouble,Mauvaise odeur,moyenne,0.42,repare,2026-05-08T21:59:00Z,2026-05-09T15:41:00Z
+Borne-fontaine Ksar 5,faible_debit,Très faible débit,basse,0.34,repare,2026-05-09T07:22:00Z,2026-05-10T06:40:00Z
+Citerne Ksar 1,autre,Couvercle de citerne manquant,haute,0.91,repare,2026-05-09T07:28:00Z,2026-05-10T21:52:00Z
+Puits Dar Naim 5,panne,,moyenne,0.54,ouvert,2026-05-09T08:15:00Z,
+Borne-fontaine Riyad 4,autre,,basse,0.16,repare,2026-05-09T18:30:00Z,2026-05-11T08:06:00Z
+Puits Toujounine 1,panne,Robinet cassé,haute,0.77,repare,2026-05-09T19:04:00Z,2026-05-10T22:04:00Z
+Borne-fontaine Ksar 3,faible_debit,Très faible débit,moyenne,0.5,repare,2026-05-09T19:42:00Z,2026-05-10T10:06:00Z
+Citerne El Mina 2,faible_debit,Pression faible le soir,haute,0.7,repare,2026-05-09T21:07:00Z,2026-05-10T09:19:00Z
+Borne-fontaine Toujounine 3,eau_trouble,Eau marron,haute,0.93,repare,2026-05-10T09:44:00Z,2026-05-10T19:56:00Z
+Puits Dar Naim 4,faible_debit,Pression faible le soir,moyenne,0.41,repare,2026-05-10T14:01:00Z,2026-05-11T09:13:00Z
+Borne-fontaine Tevragh Zeina 5,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.41,repare,2026-05-10T14:37:00Z,2026-05-11T01:43:00Z
+Borne-fontaine Dar Naim 3,autre,Couvercle de citerne manquant,moyenne,0.64,ouvert,2026-05-10T16:06:00Z,
+Borne-fontaine Toujounine 3,eau_trouble,,moyenne,0.54,repare,2026-05-10T16:46:00Z,2026-05-11T04:52:00Z
+Citerne Arafat 2,autre,Fuite autour de la borne,moyenne,0.46,repare,2026-05-10T18:40:00Z,2026-05-11T15:04:00Z
+Borne-fontaine Dar Naim 3,faible_debit,Pression faible le soir,moyenne,0.49,repare,2026-05-10T18:41:00Z,2026-05-13T15:29:00Z
+Puits Dar Naim 4,eau_trouble,,basse,0.07,repare,2026-05-11T07:05:00Z,2026-05-11T14:29:00Z
+Citerne Arafat 5,faible_debit,Pression faible le soir,basse,0.32,repare,2026-05-11T13:11:00Z,2026-05-12T03:05:00Z
+Borne-fontaine Riyad 2,panne,,basse,0.28,repare,2026-05-11T17:06:00Z,2026-05-12T02:00:00Z
+Borne-fontaine Ksar 5,eau_trouble,Eau marron,moyenne,0.5,repare,2026-05-11T18:16:00Z,2026-05-12T07:16:00Z
+Puits Dar Naim 4,faible_debit,Pression faible le soir,moyenne,0.41,repare,2026-05-11T20:33:00Z,2026-05-13T17:45:00Z
+Borne-fontaine Tevragh Zeina 4,faible_debit,,moyenne,0.54,ouvert,2026-05-11T21:51:00Z,
+Puits El Mina 1,faible_debit,Pression faible le soir,moyenne,0.43,repare,2026-05-12T08:27:00Z,2026-05-12T18:15:00Z
+Puits Arafat 3,eau_trouble,,moyenne,0.41,repare,2026-05-12T16:19:00Z,2026-05-13T04:01:00Z
+Borne-fontaine El Mina 3,panne,Borne fermée,haute,0.71,repare,2026-05-12T17:25:00Z,2026-05-13T21:01:00Z
+Borne-fontaine Ksar 3,panne,Robinet cassé,haute,0.79,repare,2026-05-12T18:07:00Z,2026-05-13T12:49:00Z
+Puits Riyad 3,autre,Couvercle de citerne manquant,moyenne,0.42,repare,2026-05-12T21:03:00Z,2026-05-14T05:15:00Z
+Puits Arafat 3,autre,Couvercle de citerne manquant,moyenne,0.43,repare,2026-05-13T06:07:00Z,2026-05-14T08:07:00Z
+Borne-fontaine Arafat 4,eau_trouble,Mauvaise odeur,moyenne,0.49,ouvert,2026-05-13T07:40:00Z,
+Puits Tevragh Zeina 3,faible_debit,Pression faible le soir,moyenne,0.49,ouvert,2026-05-13T08:00:00Z,
+Borne-fontaine Toujounine 3,panne,Plus une goutte depuis ce matin,haute,0.81,repare,2026-05-13T08:52:00Z,2026-05-15T17:58:00Z
+Citerne El Mina 2,panne,,moyenne,0.56,repare,2026-05-13T08:56:00Z,2026-05-17T22:26:00Z
+Citerne Arafat 5,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.43,repare,2026-05-13T09:51:00Z,2026-05-13T20:21:00Z
+Borne-fontaine Sebkha 1,faible_debit,Très faible débit,basse,0.07,ouvert,2026-05-13T10:06:00Z,
+Borne-fontaine Dar Naim 3,panne,Borne fermée,moyenne,0.46,repare,2026-05-13T11:06:00Z,2026-05-14T11:54:00Z
+Borne-fontaine Dar Naim 3,panne,Pompe en panne,haute,0.76,repare,2026-05-13T12:11:00Z,2026-05-15T21:53:00Z
+Borne-fontaine Arafat 4,panne,Borne fermée,haute,0.85,repare,2026-05-13T12:34:00Z,2026-05-14T23:52:00Z
+Puits Dar Naim 4,panne,Borne fermée,haute,0.91,repare,2026-05-13T12:52:00Z,2026-05-14T22:10:00Z
+Borne-fontaine Toujounine 4,faible_debit,,basse,0.15,repare,2026-05-13T13:21:00Z,2026-05-14T01:27:00Z
+Citerne Ksar 1,faible_debit,,basse,0.33,repare,2026-05-13T13:21:00Z,2026-05-14T07:21:00Z
+Borne-fontaine Sebkha 3,eau_trouble,Eau trouble avec dépôt,moyenne,0.43,ouvert,2026-05-13T17:09:00Z,
+Borne-fontaine Dar Naim 3,panne,Borne fermée,moyenne,0.46,repare,2026-05-13T17:50:00Z,2026-05-15T08:20:00Z
+Borne-fontaine Arafat 4,panne,Robinet cassé,basse,0.2,repare,2026-05-13T21:40:00Z,2026-05-15T13:52:00Z
+Puits Toujounine 1,faible_debit,Pression faible le soir,basse,0.32,repare,2026-05-14T06:35:00Z,2026-05-14T21:23:00Z
+Borne-fontaine Tevragh Zeina 4,panne,Plus une goutte depuis ce matin,moyenne,0.63,repare,2026-05-14T07:26:00Z,2026-05-15T11:20:00Z
+Citerne El Mina 4,panne,Borne fermée,haute,0.87,repare,2026-05-14T08:59:00Z,2026-05-16T15:47:00Z
+Puits Arafat 1,faible_debit,Pression faible le soir,basse,0.26,repare,2026-05-14T09:22:00Z,2026-05-14T19:52:00Z
+Puits Toujounine 1,autre,Fuite autour de la borne,basse,0.35,repare,2026-05-14T09:33:00Z,2026-05-14T23:27:00Z
+Puits Arafat 1,panne,,haute,0.93,repare,2026-05-14T10:06:00Z,2026-05-15T04:30:00Z
+Borne-fontaine Sebkha 1,panne,Robinet cassé,haute,0.83,repare,2026-05-14T10:48:00Z,2026-05-15T06:48:00Z
+Borne-fontaine Dar Naim 1,faible_debit,Très faible débit,moyenne,0.59,repare,2026-05-14T12:01:00Z,2026-05-16T08:43:00Z
+Borne-fontaine Sebkha 4,panne,Robinet cassé,basse,0.29,repare,2026-05-14T13:34:00Z,2026-05-17T18:34:00Z
+Citerne Arafat 5,faible_debit,Très faible débit,moyenne,0.52,ouvert,2026-05-14T13:55:00Z,
+Borne-fontaine Sebkha 3,faible_debit,,moyenne,0.68,ouvert,2026-05-14T14:05:00Z,
+Borne-fontaine Sebkha 3,faible_debit,Pression faible le soir,moyenne,0.45,repare,2026-05-14T14:37:00Z,2026-05-14T22:25:00Z
+Borne-fontaine Sebkha 4,autre,Couvercle de citerne manquant,basse,0.35,repare,2026-05-14T15:35:00Z,2026-05-16T19:53:00Z
+Borne-fontaine Toujounine 3,panne,,haute,0.85,ouvert,2026-05-14T16:35:00Z,
+Puits Riyad 3,panne,Pompe en panne,moyenne,0.55,ouvert,2026-05-14T17:34:00Z,
+Puits Riyad 3,eau_trouble,Mauvaise odeur,haute,0.79,ouvert,2026-05-14T20:37:00Z,
+Puits Dar Naim 4,faible_debit,,moyenne,0.58,repare,2026-05-14T20:42:00Z,2026-05-15T09:30:00Z
+Borne-fontaine Arafat 4,panne,Borne fermée,haute,0.74,repare,2026-05-15T07:51:00Z,2026-05-19T08:27:00Z
+Puits Arafat 3,panne,Plus une goutte depuis ce matin,moyenne,0.44,repare,2026-05-15T10:45:00Z,2026-05-16T01:33:00Z
+Borne-fontaine Sebkha 3,faible_debit,Pression faible le soir,moyenne,0.55,repare,2026-05-15T11:10:00Z,2026-05-16T09:22:00Z
+Borne-fontaine Tevragh Zeina 5,faible_debit,Pression faible le soir,moyenne,0.53,repare,2026-05-15T13:59:00Z,2026-05-16T17:29:00Z
+Borne-fontaine El Mina 3,panne,Borne fermée,haute,0.72,ouvert,2026-05-15T14:13:00Z,
+Borne-fontaine Sebkha 4,eau_trouble,Eau marron,haute,0.73,repare,2026-05-15T14:44:00Z,2026-05-16T07:08:00Z
+Puits Toujounine 1,autre,File d'attente très longue,moyenne,0.42,repare,2026-05-15T17:51:00Z,2026-05-16T15:57:00Z
+Borne-fontaine Toujounine 3,autre,File d'attente très longue,basse,0.23,repare,2026-05-15T19:19:00Z,2026-05-16T16:55:00Z
+Borne-fontaine Ksar 5,faible_debit,Il faut 20 minutes pour un bidon,haute,0.93,repare,2026-05-15T21:22:00Z,2026-05-16T09:58:00Z
+Puits Riyad 3,panne,Robinet cassé,moyenne,0.68,repare,2026-05-15T21:56:00Z,2026-05-16T23:26:00Z
+Borne-fontaine Arafat 4,panne,Borne fermée,haute,0.83,repare,2026-05-16T06:30:00Z,2026-05-17T23:24:00Z
+Puits El Mina 1,faible_debit,Très faible débit,moyenne,0.58,ouvert,2026-05-16T09:42:00Z,
+Borne-fontaine Tevragh Zeina 1,faible_debit,Il faut 20 minutes pour un bidon,basse,0.14,repare,2026-05-16T10:17:00Z,2026-05-16T14:35:00Z
+Borne-fontaine Dar Naim 3,panne,Borne fermée,haute,0.91,repare,2026-05-16T10:27:00Z,2026-05-17T03:03:00Z
+Borne-fontaine Arafat 4,faible_debit,,basse,0.1,ouvert,2026-05-16T10:43:00Z,
+Citerne Arafat 2,eau_trouble,Eau marron,haute,0.87,repare,2026-05-16T11:12:00Z,2026-05-16T14:24:00Z
+Borne-fontaine Tevragh Zeina 5,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.63,repare,2026-05-16T13:14:00Z,2026-05-17T17:02:00Z
+Puits El Mina 1,panne,Plus une goutte depuis ce matin,haute,0.78,repare,2026-05-16T13:22:00Z,2026-05-19T17:04:00Z
+Borne-fontaine Toujounine 3,panne,Borne fermée,haute,0.71,ouvert,2026-05-16T13:38:00Z,
+Borne-fontaine Sebkha 1,faible_debit,Pression faible le soir,basse,0.24,repare,2026-05-16T16:03:00Z,2026-05-17T01:09:00Z
+Puits Dar Naim 5,faible_debit,Pression faible le soir,moyenne,0.66,repare,2026-05-16T21:32:00Z,2026-05-17T08:20:00Z
+Borne-fontaine Tevragh Zeina 5,autre,File d'attente très longue,basse,0.22,repare,2026-05-17T06:45:00Z,2026-05-17T16:09:00Z
+Borne-fontaine Riyad 4,faible_debit,Il faut 20 minutes pour un bidon,haute,0.76,repare,2026-05-17T07:52:00Z,2026-05-17T18:52:00Z
+Borne-fontaine Riyad 1,autre,,moyenne,0.49,repare,2026-05-17T08:13:00Z,2026-05-17T21:19:00Z
+Borne-fontaine Toujounine 4,autre,,basse,0.05,repare,2026-05-17T08:49:00Z,2026-05-18T02:07:00Z
+Puits El Mina 1,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.55,repare,2026-05-17T09:37:00Z,2026-05-18T04:19:00Z
+Borne-fontaine Arafat 4,autre,Fuite autour de la borne,moyenne,0.63,repare,2026-05-17T12:12:00Z,2026-05-18T08:54:00Z
+Borne-fontaine Riyad 4,panne,Borne fermée,moyenne,0.56,repare,2026-05-17T12:51:00Z,2026-05-19T00:15:00Z
+Borne-fontaine Arafat 4,autre,Couvercle de citerne manquant,haute,0.83,ouvert,2026-05-17T17:05:00Z,
+Citerne Arafat 5,eau_trouble,Eau marron,moyenne,0.65,repare,2026-05-17T17:39:00Z,2026-05-18T07:03:00Z
+Puits Arafat 3,eau_trouble,Eau trouble avec dépôt,haute,0.78,ouvert,2026-05-17T20:30:00Z,
+Borne-fontaine Arafat 4,eau_trouble,Mauvaise odeur,basse,0.39,ouvert,2026-05-18T08:40:00Z,
+Borne-fontaine Sebkha 4,panne,Pompe en panne,haute,0.93,repare,2026-05-18T10:04:00Z,2026-05-21T01:58:00Z
+Puits Dar Naim 5,faible_debit,Très faible débit,haute,0.73,repare,2026-05-18T16:15:00Z,2026-05-19T06:09:00Z
+Puits Arafat 3,eau_trouble,Eau marron,moyenne,0.65,repare,2026-05-18T17:26:00Z,2026-05-18T23:08:00Z
+Borne-fontaine Toujounine 4,faible_debit,Pression faible le soir,basse,0.08,repare,2026-05-18T17:31:00Z,2026-05-19T20:01:00Z
+Puits Riyad 3,panne,Plus une goutte depuis ce matin,haute,0.8,repare,2026-05-18T18:41:00Z,2026-05-20T07:23:00Z
+Borne-fontaine Riyad 4,panne,Plus une goutte depuis ce matin,moyenne,0.55,ouvert,2026-05-18T20:59:00Z,
+Puits Dar Naim 5,panne,Robinet cassé,moyenne,0.53,ouvert,2026-05-19T06:33:00Z,
+Puits Dar Naim 2,eau_trouble,Eau trouble avec dépôt,moyenne,0.55,repare,2026-05-19T10:13:00Z,2026-05-19T19:25:00Z
+Puits Dar Naim 4,eau_trouble,Mauvaise odeur,basse,0.1,repare,2026-05-19T12:50:00Z,2026-05-20T03:20:00Z
+Puits Toujounine 2,faible_debit,Il faut 20 minutes pour un bidon,haute,0.85,ouvert,2026-05-19T16:55:00Z,
+Puits Dar Naim 5,eau_trouble,Eau trouble avec dépôt,moyenne,0.53,repare,2026-05-19T19:05:00Z,2026-05-19T22:11:00Z
+Puits Riyad 3,panne,Robinet cassé,moyenne,0.46,ouvert,2026-05-19T19:14:00Z,
+Borne-fontaine Dar Naim 1,eau_trouble,Eau trouble avec dépôt,haute,0.74,repare,2026-05-20T08:45:00Z,2026-05-20T23:45:00Z
+Borne-fontaine Sebkha 3,faible_debit,,basse,0.27,repare,2026-05-20T09:56:00Z,2026-05-21T02:50:00Z
+Borne-fontaine Ksar 2,panne,Pompe en panne,moyenne,0.48,repare,2026-05-20T11:16:00Z,2026-05-21T04:52:00Z
+Citerne Arafat 2,faible_debit,Très faible débit,moyenne,0.67,ouvert,2026-05-20T12:19:00Z,
+Borne-fontaine Riyad 1,autre,,basse,0.14,repare,2026-05-20T14:00:00Z,2026-05-23T06:54:00Z
+Borne-fontaine Arafat 4,eau_trouble,Mauvaise odeur,moyenne,0.59,ouvert,2026-05-20T15:28:00Z,
+Puits Arafat 3,eau_trouble,,haute,0.77,ouvert,2026-05-20T15:52:00Z,
+Borne-fontaine El Mina 3,panne,Robinet cassé,haute,0.85,repare,2026-05-20T16:17:00Z,2026-05-21T17:11:00Z
+Citerne Arafat 5,faible_debit,,basse,0.22,repare,2026-05-20T18:03:00Z,2026-05-21T15:45:00Z
+Puits Arafat 1,panne,,basse,0.15,repare,2026-05-20T19:09:00Z,2026-05-22T14:09:00Z
+Citerne Ksar 1,panne,Borne fermée,basse,0.22,ouvert,2026-05-20T21:55:00Z,
+Borne-fontaine Riyad 4,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.44,repare,2026-05-21T08:01:00Z,2026-05-21T20:13:00Z
+Citerne Arafat 2,eau_trouble,Eau trouble avec dépôt,haute,0.74,ouvert,2026-05-21T08:37:00Z,
+Puits Arafat 3,autre,Fuite autour de la borne,moyenne,0.61,ouvert,2026-05-21T08:52:00Z,
+Puits Tevragh Zeina 2,faible_debit,Pression faible le soir,moyenne,0.61,ouvert,2026-05-21T09:48:00Z,
+Borne-fontaine Dar Naim 1,faible_debit,Très faible débit,haute,0.87,repare,2026-05-21T11:25:00Z,2026-05-22T03:19:00Z
+Borne-fontaine Riyad 4,eau_trouble,Mauvaise odeur,haute,0.79,repare,2026-05-21T12:16:00Z,2026-05-21T15:28:00Z
+Borne-fontaine Toujounine 3,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.49,ouvert,2026-05-21T13:25:00Z,
+Puits Toujounine 1,faible_debit,Très faible débit,basse,0.16,repare,2026-05-21T14:20:00Z,2026-05-23T15:44:00Z
+Borne-fontaine Toujounine 3,eau_trouble,,basse,0.32,repare,2026-05-21T14:53:00Z,2026-05-21T21:05:00Z
+Borne-fontaine Riyad 4,faible_debit,Pression faible le soir,moyenne,0.49,ouvert,2026-05-21T16:13:00Z,
+Borne-fontaine Tevragh Zeina 4,faible_debit,Très faible débit,moyenne,0.69,ouvert,2026-05-21T19:36:00Z,
+Borne-fontaine Riyad 4,panne,Pompe en panne,basse,0.17,ouvert,2026-05-21T20:12:00Z,
+Borne-fontaine Dar Naim 3,panne,Plus une goutte depuis ce matin,haute,0.88,ouvert,2026-05-21T21:01:00Z,
+Borne-fontaine Tevragh Zeina 4,faible_debit,,moyenne,0.5,ouvert,2026-05-21T21:29:00Z,
+Borne-fontaine Toujounine 4,faible_debit,,basse,0.33,repare,2026-05-22T06:04:00Z,2026-05-23T07:34:00Z
+Borne-fontaine Ksar 3,faible_debit,Il faut 20 minutes pour un bidon,haute,0.94,repare,2026-05-22T06:06:00Z,2026-05-22T18:00:00Z
+Puits Riyad 3,panne,Plus une goutte depuis ce matin,basse,0.25,repare,2026-05-22T08:33:00Z,2026-05-24T09:03:00Z
+Borne-fontaine Tevragh Zeina 4,panne,Plus une goutte depuis ce matin,haute,0.75,ouvert,2026-05-22T09:02:00Z,
+Borne-fontaine Sebkha 1,panne,Pompe en panne,moyenne,0.57,ouvert,2026-05-22T09:08:00Z,
+Borne-fontaine Sebkha 4,faible_debit,Très faible débit,basse,0.37,ouvert,2026-05-22T10:47:00Z,
+Puits Tevragh Zeina 3,faible_debit,Il faut 20 minutes pour un bidon,haute,0.79,ouvert,2026-05-22T11:33:00Z,
+Puits Dar Naim 2,faible_debit,Très faible débit,moyenne,0.44,repare,2026-05-22T12:09:00Z,2026-05-22T20:33:00Z
+Borne-fontaine Toujounine 3,faible_debit,,moyenne,0.42,ouvert,2026-05-22T12:57:00Z,
+Borne-fontaine El Mina 3,panne,,haute,0.72,ouvert,2026-05-22T16:43:00Z,
+Puits Arafat 3,eau_trouble,,basse,0.05,ouvert,2026-05-22T17:53:00Z,
+Puits Teyarett 1,faible_debit,Très faible débit,basse,0.17,ouvert,2026-05-22T19:53:00Z,
+Puits Riyad 3,faible_debit,Pression faible le soir,basse,0.26,repare,2026-05-23T06:31:00Z,2026-05-23T21:43:00Z
+Borne-fontaine Sebkha 1,eau_trouble,,basse,0.33,repare,2026-05-23T12:18:00Z,2026-05-23T20:06:00Z
+Puits Dar Naim 5,panne,Robinet cassé,moyenne,0.66,repare,2026-05-23T12:53:00Z,2026-05-24T07:53:00Z
+Borne-fontaine Ksar 5,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.65,repare,2026-05-23T13:29:00Z,2026-05-24T14:47:00Z
+Borne-fontaine Toujounine 3,panne,Robinet cassé,haute,0.7,ouvert,2026-05-23T13:31:00Z,
+Puits Teyarett 1,autre,Couvercle de citerne manquant,basse,0.06,repare,2026-05-23T14:04:00Z,2026-05-25T03:40:00Z
+Puits Dar Naim 4,panne,,moyenne,0.44,ouvert,2026-05-23T14:07:00Z,
+Citerne Arafat 2,faible_debit,Pression faible le soir,haute,0.75,repare,2026-05-23T14:20:00Z,2026-05-24T14:26:00Z
+Puits Teyarett 1,faible_debit,Très faible débit,haute,0.91,ouvert,2026-05-23T16:12:00Z,
+Borne-fontaine Ksar 2,panne,,moyenne,0.53,ouvert,2026-05-23T17:59:00Z,
+Borne-fontaine Riyad 4,panne,Plus une goutte depuis ce matin,haute,0.89,repare,2026-05-23T19:11:00Z,2026-05-24T09:47:00Z
+Borne-fontaine Dar Naim 3,autre,Fuite autour de la borne,moyenne,0.56,ouvert,2026-05-24T07:03:00Z,
+Citerne Arafat 5,faible_debit,Pression faible le soir,haute,0.8,ouvert,2026-05-24T07:19:00Z,
+Puits Dar Naim 5,panne,,basse,0.37,repare,2026-05-24T10:02:00Z,2026-05-25T04:20:00Z
+Puits Arafat 1,panne,,basse,0.31,repare,2026-05-24T10:09:00Z,2026-05-27T14:57:00Z
+Borne-fontaine Toujounine 4,panne,,moyenne,0.49,ouvert,2026-05-24T11:58:00Z,
+Puits Arafat 1,panne,Plus une goutte depuis ce matin,haute,0.84,ouvert,2026-05-24T15:16:00Z,
+Borne-fontaine Riyad 4,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.45,repare,2026-05-24T16:31:00Z,2026-05-24T21:07:00Z
+Citerne Arafat 2,faible_debit,Pression faible le soir,basse,0.1,ouvert,2026-05-24T17:58:00Z,
+Puits Toujounine 2,panne,Plus une goutte depuis ce matin,haute,0.74,repare,2026-05-24T19:17:00Z,2026-05-25T21:59:00Z
+Puits Arafat 1,eau_trouble,Mauvaise odeur,haute,0.88,ouvert,2026-05-24T19:21:00Z,
+Puits Dar Naim 5,faible_debit,Très faible débit,basse,0.21,ouvert,2026-05-24T20:58:00Z,
+Puits Riyad 3,faible_debit,Il faut 20 minutes pour un bidon,basse,0.34,repare,2026-05-24T21:04:00Z,2026-05-25T03:40:00Z
+Citerne El Mina 2,faible_debit,Très faible débit,haute,0.7,repare,2026-05-25T06:31:00Z,2026-05-27T08:31:00Z
+Puits Dar Naim 4,autre,Couvercle de citerne manquant,moyenne,0.52,ouvert,2026-05-25T07:30:00Z,
+Borne-fontaine El Mina 3,panne,,moyenne,0.61,ouvert,2026-05-25T08:52:00Z,
+Puits Tevragh Zeina 2,panne,Borne fermée,basse,0.15,ouvert,2026-05-25T09:46:00Z,
+Citerne Ksar 1,eau_trouble,Mauvaise odeur,basse,0.38,ouvert,2026-05-25T11:05:00Z,
+Borne-fontaine Toujounine 4,faible_debit,Pression faible le soir,moyenne,0.41,ouvert,2026-05-25T16:37:00Z,
+Borne-fontaine Dar Naim 3,autre,Couvercle de citerne manquant,haute,0.7,ouvert,2026-05-25T19:11:00Z,
+Borne-fontaine Riyad 4,faible_debit,,moyenne,0.43,ouvert,2026-05-25T20:14:00Z,
+Borne-fontaine Dar Naim 1,autre,Couvercle de citerne manquant,basse,0.11,repare,2026-05-26T06:51:00Z,2026-05-26T15:51:00Z
+Puits Toujounine 2,faible_debit,Très faible débit,moyenne,0.66,repare,2026-05-26T07:20:00Z,2026-05-30T00:50:00Z
+Borne-fontaine Tevragh Zeina 4,eau_trouble,,haute,0.79,repare,2026-05-26T07:59:00Z,2026-05-26T13:59:00Z
+Citerne Arafat 5,panne,Plus une goutte depuis ce matin,haute,0.88,repare,2026-05-26T09:48:00Z,2026-05-27T12:42:00Z
+Borne-fontaine Dar Naim 1,panne,Borne fermée,haute,0.74,ouvert,2026-05-26T15:25:00Z,
+Borne-fontaine Toujounine 3,panne,Pompe en panne,haute,0.81,ouvert,2026-05-26T15:53:00Z,
+Puits Arafat 1,faible_debit,,haute,0.8,ouvert,2026-05-26T15:56:00Z,
+Borne-fontaine Arafat 4,panne,Borne fermée,haute,0.88,repare,2026-05-26T17:07:00Z,2026-05-28T13:13:00Z
+Puits Tevragh Zeina 3,faible_debit,Pression faible le soir,moyenne,0.44,repare,2026-05-26T18:40:00Z,2026-05-27T09:10:00Z
+Puits Toujounine 1,eau_trouble,Mauvaise odeur,basse,0.12,ouvert,2026-05-26T21:12:00Z,
+Borne-fontaine Dar Naim 3,panne,Robinet cassé,moyenne,0.67,ouvert,2026-05-27T06:21:00Z,
+Puits Arafat 1,faible_debit,,moyenne,0.43,ouvert,2026-05-27T06:31:00Z,
+Borne-fontaine Dar Naim 3,eau_trouble,Eau marron,moyenne,0.62,ouvert,2026-05-27T13:35:00Z,
+Puits Dar Naim 5,panne,Borne fermée,moyenne,0.46,ouvert,2026-05-27T14:21:00Z,
+Borne-fontaine Dar Naim 1,panne,Pompe en panne,haute,0.72,ouvert,2026-05-27T15:09:00Z,
+Borne-fontaine Toujounine 4,faible_debit,,haute,0.79,repare,2026-05-27T16:31:00Z,2026-05-28T03:31:00Z
+Borne-fontaine Riyad 1,panne,Pompe en panne,haute,0.92,repare,2026-05-27T16:51:00Z,2026-05-28T05:51:00Z
+Citerne Arafat 2,faible_debit,Très faible débit,basse,0.3,ouvert,2026-05-27T18:17:00Z,
+Borne-fontaine Dar Naim 3,faible_debit,Il faut 20 minutes pour un bidon,basse,0.23,ouvert,2026-05-27T18:21:00Z,
+Puits Arafat 1,panne,Borne fermée,haute,0.81,ouvert,2026-05-27T19:18:00Z,
+Borne-fontaine Sebkha 3,panne,Borne fermée,haute,0.72,ouvert,2026-05-27T20:58:00Z,
+Borne-fontaine Dar Naim 3,faible_debit,,basse,0.17,ouvert,2026-05-28T06:50:00Z,
+Citerne El Mina 2,faible_debit,Très faible débit,basse,0.29,ouvert,2026-05-28T07:17:00Z,
+Borne-fontaine Riyad 1,panne,Pompe en panne,haute,0.75,ouvert,2026-05-28T08:56:00Z,
+Borne-fontaine Dar Naim 3,eau_trouble,,moyenne,0.52,ouvert,2026-05-28T09:00:00Z,
+Borne-fontaine Sebkha 4,faible_debit,,moyenne,0.66,ouvert,2026-05-28T09:31:00Z,
+Borne-fontaine Sebkha 1,faible_debit,Pression faible le soir,moyenne,0.65,ouvert,2026-05-28T09:57:00Z,
+Borne-fontaine Ksar 4,eau_trouble,Eau trouble avec dépôt,moyenne,0.5,ouvert,2026-05-28T11:28:00Z,
+Borne-fontaine Riyad 1,panne,Robinet cassé,haute,0.79,ouvert,2026-05-28T12:06:00Z,
+Puits Dar Naim 5,faible_debit,Pression faible le soir,moyenne,0.63,ouvert,2026-05-28T12:18:00Z,
+Citerne El Mina 4,panne,,haute,0.84,ouvert,2026-05-28T13:19:00Z,
+Borne-fontaine Ksar 2,autre,Fuite autour de la borne,moyenne,0.59,ouvert,2026-05-28T13:41:00Z,
+Citerne Arafat 5,panne,Borne fermée,haute,0.92,ouvert,2026-05-28T17:27:00Z,
+Puits Dar Naim 4,panne,Pompe en panne,haute,0.71,ouvert,2026-05-28T17:47:00Z,
+Borne-fontaine Ksar 5,faible_debit,Pression faible le soir,moyenne,0.63,ouvert,2026-05-28T20:12:00Z,
+Citerne Arafat 5,faible_debit,Il faut 20 minutes pour un bidon,moyenne,0.52,ouvert,2026-05-28T20:16:00Z,
+Borne-fontaine Sebkha 1,eau_trouble,Mauvaise odeur,moyenne,0.46,ouvert,2026-05-29T06:28:00Z,
+Citerne Arafat 2,panne,Robinet cassé,haute,0.87,ouvert,2026-05-29T06:44:00Z,
+Borne-fontaine Dar Naim 1,autre,Couvercle de citerne manquant,basse,0.14,ouvert,2026-05-29T10:03:00Z,
+Puits Dar Naim 4,panne,Pompe en panne,haute,0.73,repare,2026-05-29T10:59:00Z,2026-05-30T16:47:00Z
+Borne-fontaine Riyad 1,faible_debit,,moyenne,0.62,ouvert,2026-05-29T13:31:00Z,
+Borne-fontaine Ksar 4,autre,,basse,0.24,ouvert,2026-05-29T13:57:00Z,
+Puits Sebkha 2,panne,,haute,0.8,ouvert,2026-05-29T14:33:00Z,
+Puits Dar Naim 4,panne,,haute,0.92,ouvert,2026-05-29T15:16:00Z,
+Puits Dar Naim 5,panne,,moyenne,0.55,ouvert,2026-05-29T17:03:00Z,
+Puits Arafat 1,panne,Robinet cassé,haute,0.77,ouvert,2026-05-29T18:46:00Z,
+Puits Arafat 3,panne,Plus une goutte depuis ce matin,moyenne,0.68,ouvert,2026-05-29T19:01:00Z,
+Borne-fontaine Arafat 4,eau_trouble,Mauvaise odeur,moyenne,0.47,ouvert,2026-05-29T21:16:00Z,
+Borne-fontaine Ksar 5,panne,Plus une goutte depuis ce matin,moyenne,0.62,repare,2026-05-29T21:26:00Z,2026-05-30T14:50:00Z
+Borne-fontaine Riyad 4,panne,Robinet cassé,haute,0.91,ouvert,2026-05-30T09:19:00Z,
+Borne-fontaine Sebkha 4,panne,Borne fermée,haute,0.77,ouvert,2026-05-30T10:27:00Z,
+Puits Dar Naim 5,faible_debit,Pression faible le soir,moyenne,0.66,ouvert,2026-05-30T15:09:00Z,
+Puits Teyarett 4,autre,,moyenne,0.63,ouvert,2026-05-30T18:13:00Z,
+Borne-fontaine Riyad 4,autre,File d'attente très longue,basse,0.16,ouvert,2026-05-30T18:35:00Z,
+Puits Teyarett 1,panne,Pompe en panne,moyenne,0.49,ouvert,2026-05-30T19:15:00Z,
+Borne-fontaine Dar Naim 3,panne,,basse,0.27,ouvert,2026-05-30T20:12:00Z,
+Borne-fontaine El Mina 3,eau_trouble,Mauvaise odeur,haute,0.75,repare,2026-05-30T21:17:00Z,2026-05-31T04:23:00Z
+Borne-fontaine Arafat 4,panne,Plus une goutte depuis ce matin,haute,0.74,ouvert,2026-05-31T07:56:00Z,
+Citerne El Mina 4,panne,Borne fermée,haute,0.94,ouvert,2026-05-31T11:15:00Z,
+Borne-fontaine Dar Naim 1,panne,Plus une goutte depuis ce matin,basse,0.3,ouvert,2026-05-31T12:12:00Z,
+Puits Dar Naim 4,eau_trouble,,basse,0.22,ouvert,2026-05-31T13:12:00Z,
+Borne-fontaine El Mina 3,faible_debit,Il faut 20 minutes pour un bidon,basse,0.06,ouvert,2026-05-31T13:17:00Z,
+Puits Riyad 3,panne,Robinet cassé,haute,0.9,ouvert,2026-05-31T16:52:00Z,
+Borne-fontaine Riyad 1,autre,,basse,0.06,ouvert,2026-05-31T18:52:00Z,

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.dashboard">Tableau de bord — Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Charts & heat map (dashboard only; Chart.js / Leaflet are loaded by js/graphiques.js after login) */
+    .charts { margin-top: 24px; }
+    .charts-grid { display: grid; gap: 12px; }
+    @media (min-width: 900px) { .charts-grid { grid-template-columns: 1fr 1fr; } .chart-card.wide { grid-column: 1 / -1; } }
+    .chart-card { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; min-width: 0; }
+    .chart-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .chart-box { position: relative; height: 260px; }
+    .chart-note { margin: 8px 0 0; font-size: .8rem; color: var(--muted); }
+    .heatmap { height: 340px; border-radius: 10px; overflow: hidden; background: #e4edf2; display: grid; place-items: center; color: var(--muted); }
+    .heatmap.leaflet-container { display: block; }
+    .heat-legend { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: .8rem; color: var(--muted); }
+    .heat-legend .scale { flex: 0 0 120px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #2b83ba, #abdda4, #ffffbf, #fdae61, #d7191c); }
+    html[dir="rtl"] .heat-legend .scale { background: linear-gradient(270deg, #2b83ba, #abdda4, #ffffbf, #fdae61, #d7191c); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Mawjoud</a>
+    <button class="lang-toggle" type="button" data-lang-toggle>عربي</button>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-burger" data-i18n-aria="nav.menu" aria-label="Menu"><span></span></label>
+    <nav class="site-nav">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="signaler.html" data-i18n="nav.report">Signaler</a>
+      <a href="dashboard.html" aria-current="page" data-i18n="nav.dashboard">Tableau de bord</a>
+      <a href="conseils.html" data-i18n="nav.tips">Conseils</a>
+    </nav>
+  </header>
+  <main class="container">
+    <!-- Login -->
+    <section id="login-view" class="login-box" hidden>
+      <h1 data-i18n="dash.login_title">Espace gestionnaire</h1>
+      <p class="lead" data-i18n="dash.login_lead">Connectez-vous pour suivre et clôturer les signalements.</p>
+      <form id="login-form" class="form" novalidate>
+        <label class="field">
+          <span data-i18n="dash.email">Email</span>
+          <input type="email" id="login-email" autocomplete="username" required dir="ltr">
+        </label>
+        <label class="field">
+          <span data-i18n="dash.password">Mot de passe</span>
+          <input type="password" id="login-password" autocomplete="current-password" required dir="ltr">
+        </label>
+        <button class="btn btn-primary btn-block" type="submit" id="login-btn">
+          <span class="when-idle" data-i18n="dash.login_btn">Se connecter</span>
+          <span class="when-busy" data-i18n="dash.login_busy">Connexion…</span>
+        </button>
+        <p id="login-msg" class="msg" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dash-view" hidden>
+      <div class="dash-head">
+        <h1 data-i18n="dash.title">Tableau de bord</h1>
+        <button type="button" id="logout-btn" class="link-btn" data-i18n="dash.logout">Se déconnecter</button>
+      </div>
+
+      <p id="kpi-sentence" class="kpi-sentence" aria-live="polite"></p>
+      <section class="stats kpis" aria-label="Chiffres clés">
+        <div class="stat"><span class="stat-value" id="kpi-week">–</span><span class="stat-label" data-i18n="dash.kpi_week">Pannes cette semaine</span></div>
+        <div class="stat"><span class="stat-value" id="kpi-open">–</span><span class="stat-label" data-i18n="dash.kpi_open">Signalements ouverts</span></div>
+        <div class="stat"><span class="stat-value" id="kpi-repair">–</span><span class="stat-label" data-i18n="dash.kpi_repair">Temps moyen de réparation</span></div>
+        <div class="stat"><span class="stat-value stat-text" id="kpi-top">–</span><span class="stat-label" id="kpi-top-label" data-i18n="dash.kpi_top">Quartier le plus touché</span></div>
+      </section>
+      <div id="alerts" class="alerts" aria-live="polite"></div>
+
+      <section class="charts" aria-labelledby="charts-title">
+        <h2 id="charts-title" data-i18n="chart.section">Analyses</h2>
+        <p id="charts-msg" class="msg" role="status"></p>
+        <div class="charts-grid">
+          <figure class="chart-card">
+            <h3 data-i18n="chart.quartier_title">Pannes par quartier</h3>
+            <div class="chart-box"><canvas id="chart-quartier" role="img" data-i18n-aria="chart.quartier_title" aria-label="Pannes par quartier"></canvas></div>
+          </figure>
+          <figure class="chart-card">
+            <h3 data-i18n="chart.type_title">Signalements par type</h3>
+            <div class="chart-box"><canvas id="chart-type" role="img" data-i18n-aria="chart.type_title" aria-label="Signalements par type"></canvas></div>
+          </figure>
+          <figure class="chart-card wide">
+            <h3 data-i18n="chart.semaine_title">Pannes et signalements par semaine</h3>
+            <div class="chart-box"><canvas id="chart-semaine" role="img" data-i18n-aria="chart.semaine_title" aria-label="Pannes et signalements par semaine"></canvas></div>
+          </figure>
+          <figure class="chart-card wide">
+            <h3 data-i18n="chart.heat_title">Carte de chaleur des pannes</h3>
+            <div id="heatmap" class="heatmap" dir="ltr"></div>
+            <div class="heat-legend"><span data-i18n="chart.heat_low">Peu</span><span class="scale" aria-hidden="true"></span><span data-i18n="chart.heat_high">Beaucoup</span></div>
+            <p class="chart-note" data-i18n="chart.heat_note">Intensité = pannes signalées dans chaque quartier, réparties sur ses points d'eau.</p>
+          </figure>
+        </div>
+      </section>
+
+      <div class="list-head">
+        <h2 data-i18n="dash.open_reports">Signalements ouverts</h2>
+        <button type="button" id="refresh-btn" class="btn btn-outline btn-small" data-i18n="dash.refresh">Actualiser</button>
+      </div>
+      <p id="dash-msg" class="msg" role="status" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th data-i18n="dash.col_urgence">Urgence</th>
+              <th data-i18n="dash.col_point">Point d'eau</th>
+              <th data-i18n="dash.col_probleme">Problème</th>
+              <th data-i18n="dash.col_date">Date</th>
+              <th data-i18n="dash.col_photo">Photo</th>
+              <th><span class="visually-hidden" data-i18n="dash.col_action">Action</span></th>
+            </tr>
+          </thead>
+          <tbody id="reports-body">
+            <tr><td colspan="6" class="muted" data-i18n="common.loading">Chargement…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><small data-i18n="footer.text">Mawjoud — l'eau près de chez vous</small></footer>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/graphiques.js"></script>
+</body>
+</html>

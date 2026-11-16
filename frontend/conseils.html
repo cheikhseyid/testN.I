@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.tips">Conseils — Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page-specific: text cards with an emoji, no images. */
+    .tips-intro { margin-bottom: 8px; }
+    .tip-section { margin-top: 20px; }
+    .tip-section h2 { display: flex; align-items: center; gap: 8px; }
+    .tip-section h2 .tip-emoji { font-size: 1.4rem; }
+    .tip { display: flex; align-items: flex-start; gap: 12px; }
+    .tip .tip-emoji { flex: none; font-size: 1.8rem; line-height: 1.2; }
+    .tip h3 { margin: 0 0 2px; }
+    .tip p { margin: 0; color: var(--text); }
+    @media (min-width: 720px) {
+      .tip-section .card-list { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Mawjoud</a>
+    <button class="lang-toggle" type="button" data-lang-toggle>عربي</button>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-burger" data-i18n-aria="nav.menu" aria-label="Menu"><span></span></label>
+    <nav class="site-nav">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="signaler.html" data-i18n="nav.report">Signaler</a>
+      <a href="dashboard.html" data-i18n="nav.dashboard">Tableau de bord</a>
+      <a href="conseils.html" aria-current="page" data-i18n="nav.tips">Conseils</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1 data-i18n="tips.title">Conseils pour l'eau</h1>
+    <p class="lead tips-intro" data-i18n="tips.intro">Des gestes simples pour économiser l'eau et rester en bonne santé.</p>
+    <div id="tips" aria-live="polite"></div>
+    <a class="btn btn-primary btn-block" href="signaler.html" data-i18n="home.cta_report">Signaler un problème</a>
+  </main>
+  <footer class="site-footer"><small data-i18n="footer.text">Mawjoud — l'eau près de chez vous</small></footer>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/conseils.js"></script>
+</body>
+</html>

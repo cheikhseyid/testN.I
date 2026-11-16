@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title.report">Signaler — Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Mawjoud</a>
+    <button class="lang-toggle" type="button" data-lang-toggle>عربي</button>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-burger" data-i18n-aria="nav.menu" aria-label="Menu"><span></span></label>
+    <nav class="site-nav">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="signaler.html" aria-current="page" data-i18n="nav.report">Signaler</a>
+      <a href="dashboard.html" data-i18n="nav.dashboard">Tableau de bord</a>
+      <a href="conseils.html" data-i18n="nav.tips">Conseils</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1 data-i18n="report.title">Signaler un problème</h1>
+    <form id="report-form" class="form" novalidate>
+      <label class="field">
+        <span data-i18n="report.point">Point d'eau</span>
+        <select name="point_id" id="point_id" required>
+          <option value="" data-i18n="report.point_choose">Choisir un point d'eau</option>
+        </select>
+      </label>
+
+      <fieldset class="field">
+        <legend data-i18n="report.type">Type de problème</legend>
+        <div class="type-grid">
+          <label class="type-tile"><input type="radio" name="type" value="panne" required><span class="type-emoji" aria-hidden="true">🚱</span><span data-i18n="type.panne">En panne</span></label>
+          <label class="type-tile"><input type="radio" name="type" value="eau_trouble"><span class="type-emoji" aria-hidden="true">🟤</span><span data-i18n="type.eau_trouble">Eau trouble</span></label>
+          <label class="type-tile"><input type="radio" name="type" value="faible_debit"><span class="type-emoji" aria-hidden="true">💧</span><span data-i18n="type.faible_debit">Faible débit</span></label>
+          <label class="type-tile"><input type="radio" name="type" value="autre"><span class="type-emoji" aria-hidden="true">❓</span><span data-i18n="type.autre">Autre</span></label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span><span data-i18n="report.text">Description</span> <small class="muted" data-i18n="report.optional">(facultatif)</small></span>
+        <textarea name="texte" id="texte" maxlength="500" rows="3" data-i18n-placeholder="report.text_ph" placeholder="Décrivez le problème (500 caractères max.)"></textarea>
+        <small class="muted char-count" id="char-count" dir="ltr">0 / 500</small>
+      </label>
+
+      <div class="field">
+        <span><span data-i18n="report.photo_label">Photo</span> <small class="muted" data-i18n="report.optional">(facultatif)</small></span>
+        <label class="photo-pick btn btn-outline">
+          <input type="file" id="photo" accept="image/*" class="visually-hidden">
+          <span aria-hidden="true">📷</span> <span data-i18n="report.photo_pick">Ajouter une photo</span>
+        </label>
+        <div id="photo-preview" class="photo-preview" hidden>
+          <img id="photo-img" alt="">
+          <div class="photo-info">
+            <small id="photo-size" class="muted" dir="ltr"></small>
+            <button type="button" id="photo-remove" class="link-btn" data-i18n="report.photo_remove">Retirer la photo</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" id="submit-btn">
+        <span class="when-idle" data-i18n="report.submit">Envoyer le signalement</span>
+        <span class="when-busy" data-i18n="report.sending">Envoi en cours…</span>
+      </button>
+      <p id="report-msg" class="msg" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <footer class="site-footer"><small data-i18n="footer.text">Mawjoud — l'eau près de chez vous</small></footer>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/signaler.js"></script>
+</body>
+</html>
