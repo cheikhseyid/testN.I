@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    form { padding: 16px; display: grid; gap: 12px; max-width: 520px; width: 100%; margin: 0 auto; }
+    label { display: grid; gap: 4px; font-weight: 600; }
+    select, textarea, input, button { font: inherit; padding: 10px; border: 1px solid #b9cfdd; border-radius: 8px; }
+    button { background: #0b6fa4; color: #fff; border: 0; font-weight: 700; }
+    button:disabled { opacity: .6; }
+    #apercu { max-width: 100%; border-radius: 8px; display: none; }
+    #message { padding: 10px; border-radius: 8px; display: none; }
+    #message.ok { display: block; background: #e6f6ec; color: #145a2e; }
+    #message.err { display: block; background: #fdecea; color: #8a1c12; }
+    small { font-weight: 400; color: #4b6578; }
+  </style>
+</head>
+<body>
+  <header><h1 data-i18n="sig_titre"></h1></header>
+  <form id="form">
+    <label><span data-i18n="sig_point"></span>
+      <select id="point" required></select>
+    </label>
+    <label><span data-i18n="sig_type"></span>
+      <select id="type" required>
+        <option value="panne" data-i18n="sig_t_panne"></option>
+        <option value="eau_trouble" data-i18n="sig_t_eau_trouble"></option>
+        <option value="faible_debit" data-i18n="sig_t_faible_debit"></option>
+        <option value="autre" data-i18n="sig_t_autre"></option>
+      </select>
+    </label>
+    <label><span data-i18n="sig_texte"></span>
+      <textarea id="texte" maxlength="500" rows="3"></textarea>
+    </label>
+    <label><span data-i18n="sig_photo"></span>
+      <input id="photo" type="file" accept="image/*" capture="environment">
+      <small id="poids"></small>
+    </label>
+    <img id="apercu" alt="">
+    <button id="envoyer" type="submit" data-i18n="sig_envoyer"></button>
+    <div id="message" role="status" aria-live="polite"></div>
+  </form>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/report.js"></script>
+</body>
+</html>

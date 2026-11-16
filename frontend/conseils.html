@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="cs_titre">Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="aller-contenu" href="#conseil" data-i18n="cs_aller"></a>
+  <header><h1 data-i18n="cs_titre"></h1></header>
+  <nav class="liens" aria-labelledby="nav-titre">
+    <span id="nav-titre" class="sr-only" data-i18n="cs_nav"></span>
+    <a href="index.html" data-i18n="cs_carte"></a>
+    <a href="report.html" data-i18n="cs_signaler"></a>
+  </nav>
+  <main class="conseils">
+    <p data-i18n="cs_intro"></p>
+    <section class="carte-conseil" aria-labelledby="compteur">
+      <h2 id="compteur"></h2>
+      <p id="conseil" tabindex="-1" aria-live="polite"></p>
+      <div class="actions">
+        <button type="button" id="prec" data-i18n="cs_prec"></button>
+        <button type="button" id="lire" aria-pressed="false" data-i18n="cs_lire"></button>
+        <button type="button" id="suiv" data-i18n="cs_suiv"></button>
+      </div>
+      <p id="info" role="status"></p>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script>
+    // Page conseils : un conseil à la fois + lecture vocale
+    const TOTAL = 10;
+    let n = 1;
+    const $ = (id) => document.getElementById(id);
+    const voix = "speechSynthesis" in window;
+
+    function lg() { return document.documentElement.lang === "ar" ? "ar" : "fr"; }
+
+    function afficher() {
+      stop();
+      $("compteur").textContent = t("cs_compteur", { n, total: TOTAL });
+      $("conseil").textContent = t("conseil_" + n);
+    }
+
+    function stop() {
+      if (voix) speechSynthesis.cancel();
+      $("lire").textContent = t("cs_lire");
+      $("lire").setAttribute("aria-pressed", "false");
+    }
+
+    function lire() {
+      if (!voix) { $("info").textContent = t("cs_pas_voix"); return; }
+      if (speechSynthesis.speaking) { stop(); return; }
+      const u = new SpeechSynthesisUtterance($("conseil").textContent);
+      u.lang = lg() === "ar" ? "ar-SA" : "fr-FR";
+      const v = speechSynthesis.getVoices().find((x) => x.lang.startsWith(lg()));
+      if (v) u.voice = v;
+      u.rate = 0.9;
+      u.onend = u.onerror = stop;
+      $("lire").textContent = t("cs_stop");
+      $("lire").setAttribute("aria-pressed", "true");
+      speechSynthesis.speak(u);
+    }
+
+    function aller(d) {
+      n = ((n - 1 + d + TOTAL) % TOTAL) + 1;
+      afficher();
+    }
+
+    $("prec").addEventListener("click", () => aller(-1));
+    $("suiv").addEventListener("click", () => aller(1));
+    $("lire").addEventListener("click", lire);
+    // Flèches gauche/droite (inversées en arabe)
+    document.addEventListener("keydown", (e) => {
+      if (e.target.closest("input, textarea, select")) return;
+      const sens = lg() === "ar" ? -1 : 1;
+      if (e.key === "ArrowRight") aller(sens);
+      if (e.key === "ArrowLeft") aller(-sens);
+    });
+    document.addEventListener("langue", afficher);
+
+    // Conseils ajoutés au dictionnaire I18N de config.js, puis affichage
+    fetch("i18n/conseils.json")
+      .then((r) => r.json())
+      .then((j) => {
+        Object.assign(I18N.fr, j.fr);
+        Object.assign(I18N.ar, j.ar);
+        appliquer();
+        afficher();
+      })
+      .catch(() => ($("info").textContent = t("erreur")));
+  </script>
+</body>
+</html>

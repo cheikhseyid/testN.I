@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mawjoud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    main { padding: 16px; max-width: 760px; width: 100%; margin: 0 auto; display: grid; gap: 12px; }
+    input, select, button { font: inherit; padding: 10px; border: 1px solid #b9cfdd; border-radius: 8px; }
+    button { background: #0b6fa4; color: #fff; border: 0; font-weight: 700; cursor: pointer; }
+    button:disabled { opacity: .6; }
+    #login { display: grid; gap: 10px; max-width: 360px; }
+    #tableau[hidden], #login[hidden] { display: none; }
+    .barre { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    li { background: #fff; border: 1px solid #d5e3ec; border-radius: 10px; padding: 12px;
+         display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; }
+    .badge { min-width: 44px; text-align: center; padding: 6px; border-radius: 999px; font-weight: 700; color: #fff; }
+    .u-haute { background: #c62828; } .u-moy { background: #e08a00; } .u-basse { background: #2e7d32; }
+    .info small { color: #4b6578; display: block; }
+    .info p { margin: 4px 0 0; overflow-wrap: anywhere; }
+    #message { color: #8a1c12; min-height: 1.2em; }
+    /* Zone des graphiques */
+    #graphes { display: grid; gap: 12px; }
+    #graphes h2 { margin: 8px 0 0; font-size: 1.05rem; }
+    #graphes figure { margin: 0; background: #fff; border: 1px solid #d5e3ec; border-radius: 10px; padding: 12px; overflow-x: auto; }
+    #graphes figcaption { font-weight: 700; margin-bottom: 6px; }
+    #graphes svg { width: 100%; max-width: 520px; height: auto; display: block; }
+    #graphes .lbl { font-size: 11px; fill: #4b6578; }
+    #graphes .val { font-size: 11px; fill: #12324a; font-weight: 700; }
+    #graphes .bar { fill: #0b6fa4; }
+    #graphes .axe { stroke: #b9cfdd; }
+    #graphes .courbe { fill: none; stroke: #0b6fa4; stroke-width: 2.5; stroke-linejoin: round; }
+    #graphes .pt { fill: #0b6fa4; }
+    #graphes table { border-collapse: collapse; font-size: 12px; }
+    #graphes td { padding: 6px; border: 1px solid #e3edf3; text-align: center; white-space: nowrap; }
+    #graphes td:first-child { text-align: start; color: #4b6578; }
+    #graphes .case { min-width: 34px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header><h1 data-i18n="adm_titre"></h1></header>
+  <main>
+    <form id="login">
+      <label for="mdp" data-i18n="adm_mdp"></label>
+      <input id="mdp" type="password" autocomplete="current-password" required>
+      <button type="submit" data-i18n="adm_connexion"></button>
+    </form>
+    <section id="tableau" hidden>
+      <div class="barre">
+        <label for="quartier" data-i18n="adm_quartier"></label>
+        <select id="quartier"><option value="" data-i18n="adm_tous"></option></select>
+        <span id="compte"></span>
+      </div>
+      <ul id="liste"></ul>
+      <section id="graphes">
+        <h2 data-i18n="ch_titre"></h2>
+        <strong id="g-ouverts"></strong>
+        <figure><figcaption data-i18n="ch_quartier"></figcaption><div id="g-quartier"></div></figure>
+        <figure><figcaption data-i18n="ch_jours"></figcaption><div id="g-jours"></div></figure>
+        <figure><figcaption data-i18n="ch_chaleur"></figcaption><div id="g-chaleur"></div></figure>
+      </section>
+    </section>
+    <div id="message" role="status" aria-live="polite"></div>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>

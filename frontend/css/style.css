@@ -1,0 +1,51 @@
+/* Style léger, mobile d'abord */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: system-ui, sans-serif;
+  display: flex; flex-direction: column;
+  background: #f4f8fb; color: #12324a;
+}
+header { padding: 10px 16px; background: #0b6fa4; color: #fff; }
+header h1 { margin: 0; font-size: 1.1rem; }
+#bandeau {
+  padding: 10px 16px; background: #e6f6ec; color: #145a2e;
+  font-weight: 600; font-size: .95rem; border-bottom: 1px solid #cde9d6;
+}
+#carte { flex: 1; min-height: 300px; }
+.pin { font-size: 20px; line-height: 24px; text-align: center; background: none; border: 0; }
+
+/* --- Accessibilité --- */
+html { font-size: 18px; } /* texte de base ≥ 18 px */
+body { line-height: 1.5; }
+#bandeau { font-size: 1rem; }
+a { color: #0a5a86; text-underline-offset: 3px; } /* contraste ≥ 4.5:1 sur fond clair */
+/* Focus toujours visible (clavier) */
+:focus-visible { outline: 3px solid #f2a900; outline-offset: 2px; }
+header :focus-visible { outline-color: #fff; }
+/* Cibles tactiles ≥ 44 px */
+button, select, input, textarea, .liens a { min-height: 44px; min-width: 44px; }
+.liens a { display: inline-flex; align-items: center; padding: 0 8px; }
+/* Masqué visuellement, lu par les lecteurs d'écran */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+/* Lien d'évitement visible au focus */
+.aller-contenu { position: absolute; left: -9999px; }
+.aller-contenu:focus { left: 8px; top: 8px; z-index: 1000; padding: 10px; background: #fff; color: #0a5a86; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Page conseils */
+.liens { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 16px; background: #fff; border-bottom: 1px solid #d5e3ec; }
+.conseils { padding: 16px; max-width: 640px; width: 100%; margin: 0 auto; }
+.carte-conseil { background: #fff; border: 1px solid #d5e3ec; border-radius: 12px; padding: 16px; }
+.carte-conseil h2 { margin: 0 0 8px; font-size: 1rem; color: #3d5a6e; }
+#conseil { font-size: 1.2rem; min-height: 6em; margin: 0 0 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button {
+  flex: 1 1 auto; font: inherit; font-weight: 700; padding: 10px 14px;
+  border: 2px solid #0b6fa4; border-radius: 8px; background: #fff; color: #0a5a86; cursor: pointer;
+}
+.actions #lire { background: #0b6fa4; color: #fff; }
+.actions #lire[aria-pressed="true"] { background: #12324a; border-color: #12324a; }
