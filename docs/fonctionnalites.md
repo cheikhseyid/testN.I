@@ -24,7 +24,7 @@ En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir R
 | Livrable | Statut |
 |---|---|
 | URL publique | ❌ À faire : `render.yaml` et `frontend/vercel.json` sont prêts, mais rien n'est déployé |
-| Code GitHub | ❌ À faire : le dossier du projet n'est pas encore un dépôt git |
+| Code GitHub | ✅ https://github.com/cheikhseyid/testN.I, branche `mawjoud` (dépôt public ; à fusionner dans `main` par une pull request) |
 | Document des fonctionnalités réalisées | ✅ Ce fichier |
 
 ## Défis choisis
