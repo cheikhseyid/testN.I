@@ -8,9 +8,11 @@ services:
     runtime: python
     plan: free
     rootDir: backend
-    # seed.py ne charge le CSV que si points_eau est vide (premier déploiement) ;
-    # les données existantes et les signalements sont conservés. L'admin est créé/mis à jour.
-    buildCommand: pip install -r requirements.txt && python seed.py
+    # seed.py ne charge les CSV que si les tables sont vides (premier déploiement).
+    # --recalcul, à chaque déploiement : recale l'historique SIMULÉ sur aujourd'hui, clôt les simulés
+    # de plus de 14 jours et recalcule l'état des points. Les vrais signalements ne sont jamais
+    # modifiés ni effacés. L'admin est créé ou mis à jour.
+    buildCommand: pip install -r requirements.txt && python seed.py --recalcul
     # --proxy-headers : l'IP réelle du client (X-Forwarded-For) est utilisée par
     # slowapi ; sans ça, tous les utilisateurs partagent le même quota de 5/min.
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips="*"
