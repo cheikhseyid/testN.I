@@ -3,7 +3,7 @@
 // Anywhere else (Vercel) → API on Render.
 // index.html repeats this rule inline for its GET /points preload: keep both in sync.
 (function () {
-  const PROD_API = "https://mawjoud-api.onrender.com"; // URL du service Render (Dashboard → mawjoud-api)
+  const PROD_API = "https://mawjoud-api-danc.onrender.com"; // URL du service Render (Dashboard → mawjoud-api)
 
   const host = location.hostname;
   const isLocal =
