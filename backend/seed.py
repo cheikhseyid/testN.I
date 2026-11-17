@@ -5,8 +5,9 @@ puis crée (ou met à jour) l'admin à partir de ADMIN_EMAIL / ADMIN_PASSWORD.
 Usage (depuis backend/) :
   python seed.py              # sans risque : ne touche pas aux données existantes (utilisé au déploiement)
   python seed.py --reset      # vide points_eau ET les signalements (CASCADE), puis recharge les 2 CSV
-  python seed.py --recalcul   # base en ligne : recale l'historique SIMULÉ sur aujourd'hui, clôt les
-                              # signalements simulés de plus de 14 jours, puis recalcule l'état des points.
+  python seed.py --recalcul   # base en ligne : recale l'historique SIMULÉ sur aujourd'hui, ne laisse ouverts
+                              # que des simulés des 3 derniers jours (1 par point, ~60 % ok / 25 % faible /
+                              # 15 % panne, alerte seulement à Arafat), puis recalcule l'état des points.
                               # Les vrais signalements ne sont jamais modifiés ni effacés.
 """
 import argparse
@@ -25,11 +26,18 @@ from app.models import Admin, PointEau, Signalement
 CSV_PATH = Path(__file__).parent / "data" / "points.csv"
 HISTORY_PATH = Path(__file__).parent / "data" / "historique.csv"
 
-# Simulated history: the most recent report is put at "now - 1 day"; reports older than 14 days are closed.
+# Simulated history: the most recent report is put at "now - 1 day".
 LATEST_AGE = timedelta(days=1)
-CLOSE_AFTER = timedelta(days=14)
-# Typical repair time (hours) used to date the reports closed by the 14-day rule (same medians as the CSV).
+# Only simulated reports of the last 3 days may stay open, at most 1 per point, chosen to reach this mix
+# (out of 40 points: ~60 % ok, 25 % faible, 15 % panne) with a shortage alert in ONE quartier only.
+KEEP_OPEN_FOR = timedelta(days=3)
+TARGET_PANNE = 6
+TARGET_FAIBLE = 10
+ALERT_QUARTIER = "Arafat"
+ALERT_THRESHOLD = 3  # same as /alertes (app/routers/stats.py)
+# Typical repair time (hours) used to date the reports that get closed (same medians as the CSV).
 REPAIR_HOURS = {"panne": 30, "faible_debit": 18, "eau_trouble": 12, "autre": 24}
+URGENCE_BY_TYPE = {"panne": ("haute", 0.85), "faible_debit": ("moyenne", 0.55)}
 # Ids of the simulated reports, so --recalcul never touches real ones (no schema change in models.py).
 MARKER_TABLE = "seed_historique"
 
@@ -187,24 +195,110 @@ def refresh_history(now: datetime | None = None) -> dict:
         shift = (now - LATEST_AGE) - latest if latest else timedelta(0)
 
         rows = db.scalars(select(Signalement).where(Signalement.id.in_(sim))).all()
-        reopened = closed = 0
         for s in rows:
             s.cree_le = s.cree_le + shift  # same gaps between dates
             if s.repare_le is not None:
                 s.repare_le = s.repare_le + shift
-                if s.repare_le > now:      # a repair can't be in the future: still open today
+                if s.repare_le > now:      # a repair can't be in the future: open for now (may be closed below)
                     s.statut, s.repare_le = "ouvert", None
-                    reopened += 1
-            if s.statut == "ouvert" and now - s.cree_le > CLOSE_AFTER:
+
+        targets = _choose_open_targets(db, rows, now)
+        keep, adjusted = set(), 0
+        for k, (pid, typ) in enumerate(targets):
+            report_row, was_adjusted = _report_for_target(rows, pid, typ, now, k)
+            if report_row is not None:
+                keep.add(report_row.id)
+                adjusted += was_adjusted
+        closed = 0
+        for s in rows:
+            if s.statut == "ouvert" and s.id not in keep:
                 s.statut = "repare"
                 s.repare_le = min(s.cree_le + timedelta(hours=REPAIR_HOURS.get(s.type, 24)), now)
                 closed += 1
         db.flush()
         changed = recompute_point_states(db, now)
     report = {"simules": len(rows), "reperes_ajoutes": backfilled, "decalage_jours": round(shift.total_seconds() / 86400, 1),
-              "rouverts": reopened, "clos_14j": closed, "points_modifies": changed}
+              "ouverts_gardes": len(keep), "ajustes": adjusted, "clos": closed, "points_modifies": changed}
     print("Recalcul de l'historique : " + ", ".join(f"{k}={v}" for k, v in report.items()))
     return report
+
+
+def _choose_open_targets(db, sim_rows: list[Signalement], now: datetime) -> list[tuple[int, str]]:
+    """Which points get ONE open simulated report, and of which type, so that (with the real open
+    reports, which are never touched) we get ~TARGET_PANNE pannes, ~TARGET_FAIBLE faibles, the rest ok,
+    and a shortage alert (>= ALERT_THRESHOLD pannes) in ALERT_QUARTIER only."""
+    sim_ids = {s.id for s in sim_rows}
+    points = db.execute(select(PointEau.id, PointEau.quartier).order_by(PointEau.id)).all()
+    real_types: dict[int, set] = {}
+    for pid, typ, sid in db.execute(
+        select(Signalement.point_id, Signalement.type, Signalement.id).where(Signalement.statut == "ouvert")
+    ).all():
+        if sid not in sim_ids:
+            real_types.setdefault(pid, set()).add(typ)
+    base = {pid: "panne" if "panne" in t else "faible" if "faible_debit" in t else "ok" for pid, t in real_types.items()}
+
+    recent: dict[int, set] = {}
+    for s in sim_rows:
+        if now - s.cree_le <= KEEP_OPEN_FOR:
+            recent.setdefault(s.point_id, set()).add(s.type)
+
+    def rank(pid, typ):  # prefer points that already have a recent simulated report of that type
+        return (typ not in recent.get(pid, ()), pid not in recent, pid)
+
+    pannes_by_q: dict[str, int] = {}
+    for pid, q in points:
+        if base.get(pid) == "panne":
+            pannes_by_q[q] = pannes_by_q.get(q, 0) + 1
+    targets: list[tuple[int, str]] = []
+    chosen: set[int] = set()
+
+    # 1) the alert quartier reaches the threshold
+    need = ALERT_THRESHOLD - pannes_by_q.get(ALERT_QUARTIER, 0)
+    for pid in sorted((p for p, q in points if q == ALERT_QUARTIER and base.get(p) != "panne"),
+                      key=lambda p: rank(p, "panne"))[:max(0, need)]:
+        targets.append((pid, "panne")); chosen.add(pid)
+        pannes_by_q[ALERT_QUARTIER] = pannes_by_q.get(ALERT_QUARTIER, 0) + 1
+
+    # 2) other pannes, spread so that no other quartier reaches the threshold
+    quartier_of = dict(points)
+    while sum(pannes_by_q.values()) < TARGET_PANNE:
+        cands = [p for p, q in points if q != ALERT_QUARTIER and p not in chosen and base.get(p) != "panne"
+                 and pannes_by_q.get(q, 0) + 1 < ALERT_THRESHOLD]
+        if not cands:
+            break
+        pid = min(cands, key=lambda p: (pannes_by_q.get(quartier_of[p], 0), *rank(p, "panne")))
+        targets.append((pid, "panne")); chosen.add(pid)
+        pannes_by_q[quartier_of[pid]] = pannes_by_q.get(quartier_of[pid], 0) + 1
+
+    # 3) faible débit
+    faibles = sum(1 for pid, _ in points if base.get(pid) == "faible" and pid not in chosen)
+    cands = sorted((p for p, _ in points if p not in chosen and base.get(p, "ok") == "ok"),
+                   key=lambda p: rank(p, "faible_debit"))
+    for pid in cands[:max(0, TARGET_FAIBLE - faibles)]:
+        targets.append((pid, "faible_debit"))
+    return targets
+
+
+def _report_for_target(sim_rows: list[Signalement], pid: int, typ: str, now: datetime, k: int):
+    """Open one simulated report of point `pid` with type `typ`, dated within the last 3 days.
+    Prefer an existing recent report of that type; otherwise adjust the point's most recent one
+    (type and/or date). Returns (report, adjusted?)."""
+    mine = sorted((s for s in sim_rows if s.point_id == pid), key=lambda s: s.cree_le, reverse=True)
+    if not mine:
+        return None, False
+    recent = [s for s in mine if now - s.cree_le <= KEEP_OPEN_FOR]
+    exact = [s for s in recent if s.type == typ]
+    s = exact[0] if exact else (recent[0] if recent else mine[0])
+    adjusted = not exact
+    if now - s.cree_le > KEEP_OPEN_FOR:
+        # Inside the window but never after "now - LATEST_AGE": the latest simulated report must stay
+        # the reference of the shift, otherwise the next run would move the whole history again.
+        s.cree_le = now - LATEST_AGE - timedelta(hours=2) - timedelta(minutes=67 * k)
+    if s.type != typ:
+        s.type = typ
+        s.urgence, s.score_urgence = URGENCE_BY_TYPE[typ]
+    s.statut, s.repare_le = "ouvert", None
+    return s, adjusted
 
 
 def seed_admin() -> None:
