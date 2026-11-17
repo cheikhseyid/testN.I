@@ -60,6 +60,7 @@
   "report.photo_remove": "Retirer la photo",
   "report.compressing": "Compression de la photo…",
   "report.sending": "Envoi en cours…",
+  "report.sending_slow": "Envoi en cours… le serveur peut mettre jusqu'à 1 minute à démarrer.",
   "report.ok": "Merci ! Votre signalement a bien été envoyé.",
   "report.err_429": "Trop de signalements, réessayez dans 1 minute.",
   "report.err_point": "Choisissez un point d'eau.",
@@ -177,6 +178,7 @@
   "q.Riyad": "Riyad",
 
   "err.timeout": "Le serveur ne répond pas (délai de 8 secondes dépassé). Réessayez plus tard.",
+  "err.timeout_s": "Le serveur ne répond pas (délai de {s} secondes dépassé). Réessayez plus tard.",
   "err.network": "Impossible de joindre le serveur. Vérifiez votre connexion internet.",
   "err.too_many": "Trop de requêtes. Patientez un instant.",
   "err.server": "Erreur du serveur. Réessayez plus tard.",

@@ -1,4 +1,4 @@
-// Minimal API client: get/post with an 8 s timeout and readable error messages.
+// Minimal API client: get/post with a timeout (8 s by default, per call with { timeout }) and readable error messages.
 (function () {
   const cfg = window.MAWJOUD_CONFIG || {};
   const BASE = (cfg.API_BASE || "").replace(/\/$/, "");
@@ -24,9 +24,10 @@
     }
   }
 
-  async function request(method, path, body) {
+  async function request(method, path, body, options) {
+    const timeout = (options && options.timeout) || TIMEOUT;
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), TIMEOUT);
+    const timer = setTimeout(() => controller.abort(), timeout);
     const opts = { method, signal: controller.signal, headers: { Accept: "application/json" } };
 
     if (body instanceof FormData) {
@@ -41,7 +42,8 @@
       res = await fetch(BASE + path, opts);
     } catch (e) {
       if (e.name === "AbortError") {
-        throw new ApiError(msg("err.timeout", "Le serveur ne répond pas (délai de 8 secondes dépassé). Réessayez plus tard."), 0, "timeout");
+        const text = msg("err.timeout_s", "Le serveur ne répond pas (délai de {s} secondes dépassé). Réessayez plus tard.");
+        throw new ApiError(text.replace("{s}", Math.round(timeout / 1000)), 0, "timeout");
       }
       throw new ApiError(msg("err.network", "Impossible de joindre le serveur. Vérifiez votre connexion internet."), 0, "network");
     } finally {
@@ -64,8 +66,8 @@
   }
 
   window.api = {
-    get: (path) => request("GET", path),
-    post: (path, body) => request("POST", path, body),
+    get: (path, options) => request("GET", path, undefined, options),
+    post: (path, body, options) => request("POST", path, body, options),
     ApiError,
   };
 })();

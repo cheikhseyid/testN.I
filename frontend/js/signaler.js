@@ -4,10 +4,14 @@
   const MAX_SIDE = 800;
   const QUALITY = 0.6;
   const MAX_BYTES = 300 * 1024; // limite du serveur
+  // The free Render instance sleeps and can take ~1 min to start.
+  const POST_TIMEOUT_MS = 45000; // for the report itself
+  const WAKE_FOR_MS = 60000;     // how long we keep trying to wake the server before sending
 
   const FALLBACK = {
     "report.point_choose": "Choisir un point d'eau",
     "report.sending": "Envoi en cours…",
+    "report.sending_slow": "Envoi en cours… le serveur peut mettre jusqu'à 1 minute à démarrer.",
     "report.ok": "Merci ! Votre signalement a bien été envoyé.",
     "report.err_429": "Trop de signalements, réessayez dans 1 minute.",
     "report.err_point": "Choisissez un point d'eau.",
@@ -45,7 +49,8 @@
     lastMsg = m;
     if (!m) { msgEl.textContent = ""; msgEl.className = "msg"; return; }
     msgEl.textContent = m.key ? tr(m.key) : m.text;
-    msgEl.className = "msg" + (m.ok ? " ok" : "");
+    // info = neutral grey text (waiting), ok = green, otherwise red error box
+    msgEl.className = m.info ? "muted" : "msg" + (m.ok ? " ok" : "");
   }
 
   // ---------- Points ----------
@@ -187,16 +192,35 @@
     submitBtn.classList.toggle("is-busy", busy);
   }
 
+  // Wake a sleeping server with a side-effect-free GET /health before sending the report.
+  // This way the POST is sent only once the server answers: a report can't be created on the
+  // server after the browser gave up, so the user is never tempted to send it twice.
+  async function wakeServer() {
+    const deadline = Date.now() + WAKE_FOR_MS;
+    for (;;) {
+      try {
+        await window.api.get("/health", { timeout: Math.max(5000, deadline - Date.now()) });
+        return;
+      } catch (e) {
+        if (!e.retryable || Date.now() + 3000 >= deadline) throw e;
+        await new Promise((r) => setTimeout(r, 3000)); // refused while starting: try again shortly
+      }
+    }
+  }
+
+  let sending = false;
+
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
-    if (submitBtn.disabled) return;
+    if (sending || submitBtn.disabled) return; // no double send (double click, Enter key…)
 
     const type = form.querySelector('input[name="type"]:checked');
     if (!select.value) { showMsg({ key: "report.err_point" }); select.focus(); return; }
     if (!type) { showMsg({ key: "report.err_type" }); form.querySelector('input[name="type"]').focus(); return; }
 
+    sending = true;
     setBusy(true);
-    showMsg(null);
+    showMsg({ key: "report.sending_slow", info: true });
     try {
       if (photoJob) await photoJob; // wait for an in-progress compression
       const fd = new FormData();
@@ -205,7 +229,8 @@
       fd.append("texte", texte.value.trim());
       if (photoBlob) fd.append("photo", photoBlob, "photo.jpg");
 
-      await window.api.post("/signalements", fd);
+      await wakeServer();
+      await window.api.post("/signalements", fd, { timeout: POST_TIMEOUT_MS });
 
       const keepPoint = select.value;
       form.reset();
@@ -216,6 +241,7 @@
     } catch (e) {
       showMsg(e.status === 429 ? { key: "report.err_429" } : { text: e.message });
     } finally {
+      sending = false;
       setBusy(false);
     }
   });
