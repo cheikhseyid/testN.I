@@ -1,0 +1,41 @@
+# Render Blueprint — API Mawjoud (FastAPI) + base Postgres.
+# Dashboard Render → New → Blueprint → choisir ce dépôt.
+# Les variables "sync: false" sont demandées à la création du Blueprint.
+
+services:
+  - type: web
+    name: mawjoud-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    # seed.py ne charge le CSV que si points_eau est vide (premier déploiement) ;
+    # les données existantes et les signalements sont conservés. L'admin est créé/mis à jour.
+    buildCommand: pip install -r requirements.txt && python seed.py
+    # --proxy-headers : l'IP réelle du client (X-Forwarded-For) est utilisée par
+    # slowapi ; sans ça, tous les utilisateurs partagent le même quota de 5/min.
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips="*"
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mawjoud-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      # URL(s) du front, séparées par des virgules, sans "/" final.
+      # Ex. : https://mawjoud.vercel.app
+      - key: CORS_ORIGINS
+        sync: false
+
+databases:
+  - name: mawjoud-db
+    plan: free
+    databaseName: eau
+    user: mawjoud

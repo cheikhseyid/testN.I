@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets and local settings
+.env
+.claude/
+
+# Separate project (has its own git repository)
+testN.I/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
