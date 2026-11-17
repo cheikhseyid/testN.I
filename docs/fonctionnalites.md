@@ -24,7 +24,7 @@ En ligne : https://testni-frontend.vercel.app. En local : site sur http://localh
 | Livrable | Statut |
 |---|---|
 | URL publique | ✅ Site : https://testni-frontend.vercel.app · API : https://mawjoud-api-danc.onrender.com (offre gratuite Render : 1er appel lent après inactivité) |
-| Code GitHub | 🟡 https://github.com/cheikhseyid/testN.I, branche `main`. Le dépôt est **privé** : à passer en public (Settings → Danger Zone → Change visibility) pour que le jury y ait accès |
+| Code GitHub | ✅ https://github.com/cheikhseyid/testN.I (dépôt public, branche `main`) |
 | Document des fonctionnalités réalisées | ✅ Ce fichier |
 
 ## Défis choisis
