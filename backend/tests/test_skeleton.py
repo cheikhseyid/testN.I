@@ -40,3 +40,14 @@ def test_admin_email_unique(client):
     uniques = [i for i in insp.get_indexes("admins") if i["unique"]]
     uniques += insp.get_unique_constraints("admins")
     assert any(u["column_names"] == ["email"] for u in uniques)
+
+
+def test_parse_cors_origins_tolerates_dashboard_typos():
+    from app.main import parse_origins
+
+    assert parse_origins("") == []
+    assert parse_origins("https://test-n-i.vercel.app") == ["https://test-n-i.vercel.app"]
+    assert parse_origins(' "https://Test-N-I.vercel.app/" ') == ["https://test-n-i.vercel.app"]
+    assert parse_origins("https://a.vercel.app/path/, 'http://localhost:5501';https://a.vercel.app") == [
+        "https://a.vercel.app", "http://localhost:5501",
+    ]

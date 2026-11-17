@@ -24,7 +24,22 @@ app = FastAPI(title="Points d'eau API", lifespan=lifespan)
 app.state.limiter = signalements.limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()]
+def parse_origins(raw: str) -> list[str]:
+    """CORS_ORIGINS -> exact origins. Tolerates the usual dashboard typos: spaces,
+    quotes, a trailing "/" or a path (browsers send the Origin without them)."""
+    out = []
+    for item in raw.replace(";", ",").replace("\n", ",").split(","):
+        o = item.strip().strip("'\"").strip()
+        if not o:
+            continue
+        scheme, sep, rest = o.partition("://")
+        o = (scheme.lower() + sep + rest.split("/", 1)[0].lower()) if sep else o.rstrip("/")
+        if o not in out:
+            out.append(o)
+    return out
+
+
+origins = parse_origins(os.getenv("CORS_ORIGINS", ""))
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

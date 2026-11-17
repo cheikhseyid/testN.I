@@ -24,7 +24,7 @@ En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir R
 | Livrable | Statut |
 |---|---|
 | URL publique | 🟡 Partiel : API en ligne sur https://mawjoud-api-danc.onrender.com (Render) ; site sur Vercel à déployer |
-| Code GitHub | ✅ https://github.com/cheikhseyid/testN.I (dépôt public, branche `main`) |
+| Code GitHub | 🟡 https://github.com/cheikhseyid/testN.I, branche `main`. Le dépôt est **privé** : à passer en public (Settings → Danger Zone → Change visibility) pour que le jury y ait accès |
 | Document des fonctionnalités réalisées | ✅ Ce fichier |
 
 ## Défis choisis
