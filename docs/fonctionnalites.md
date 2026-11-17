@@ -23,8 +23,8 @@ En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir R
 
 | Livrable | Statut |
 |---|---|
-| URL publique | ❌ À faire : `render.yaml` et `frontend/vercel.json` sont prêts, mais rien n'est déployé |
-| Code GitHub | ✅ https://github.com/cheikhseyid/testN.I, branche `mawjoud` (dépôt public ; à fusionner dans `main` par une pull request) |
+| URL publique | 🟡 Partiel : API en ligne sur https://mawjoud-api-danc.onrender.com (Render) ; site sur Vercel à déployer |
+| Code GitHub | ✅ https://github.com/cheikhseyid/testN.I (dépôt public, branche `main`) |
 | Document des fonctionnalités réalisées | ✅ Ce fichier |
 
 ## Défis choisis
