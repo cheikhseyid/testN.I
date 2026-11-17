@@ -1,7 +1,7 @@
 # Fonctionnalités réalisées — Mawjoud, l'eau, un bien partagé
 
 Aider les habitants à trouver, signaler et partager l'eau.
-En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir README). Tests back-end : `cd backend && pytest -q` (113 tests).
+En ligne : https://testni-frontend.vercel.app. En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir README). Tests back-end : `cd backend && pytest -q` (113 tests).
 
 ## Fonctionnalités obligatoires
 
@@ -23,7 +23,7 @@ En local : site sur http://localhost:5501, API sur http://localhost:8000 (voir R
 
 | Livrable | Statut |
 |---|---|
-| URL publique | 🟡 Partiel : API en ligne sur https://mawjoud-api-danc.onrender.com (Render) ; site sur Vercel à déployer |
+| URL publique | ✅ Site : https://testni-frontend.vercel.app · API : https://mawjoud-api-danc.onrender.com (offre gratuite Render : 1er appel lent après inactivité) |
 | Code GitHub | 🟡 https://github.com/cheikhseyid/testN.I, branche `main`. Le dépôt est **privé** : à passer en public (Settings → Danger Zone → Change visibility) pour que le jury y ait accès |
 | Document des fonctionnalités réalisées | ✅ Ce fichier |
 

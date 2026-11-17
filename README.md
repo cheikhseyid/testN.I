@@ -2,7 +2,7 @@
 
 Application web légère (FR / عربي) : FastAPI + PostgreSQL pour l'API, HTML/CSS/JS sans framework pour le site.
 
-**Code** : https://github.com/cheikhseyid/testN.I. **API** : https://mawjoud-api-danc.onrender.com (Render, `render.yaml`). **Site** : *URL Vercel à compléter* (dossier `frontend`).
+**Code** : https://github.com/cheikhseyid/testN.I. **API** : https://mawjoud-api-danc.onrender.com (Render, `render.yaml`). **Site** : https://testni-frontend.vercel.app (Vercel, dossier `frontend`). Le service gratuit Render s'endort : le premier chargement peut prendre ~1 min.
 
 **Lancer en local** (Python 3.12 et Docker) :
 1. Base : `docker run -d --name eau-pg -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=eau -p 5432:5432 postgres:16`
