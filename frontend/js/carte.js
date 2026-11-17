@@ -14,9 +14,9 @@
   const TILES = {
     fr: { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: "abc",
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' },
-    // Esri World Imagery: satellite, no text at all, no API key.
-    ar: { url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-          subdomains: "", maxZoom: 18,
+    // Esri Light Gray Canvas, base layer only: streets and coastline, no text at all, no API key.
+    ar: { url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+          subdomains: "", maxZoom: 16,
           attribution: '&copy; <a href="https://www.esri.com/">Esri</a>' },
   };
   const ETAT = {
