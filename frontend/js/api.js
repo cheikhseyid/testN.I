@@ -11,10 +11,16 @@
   }
 
   class ApiError extends Error {
-    constructor(message, status) {
+    // kind: "timeout" (no answer in time), "network" (unreachable) or "http" (answered with an error)
+    constructor(message, status, kind) {
       super(message);
       this.name = "ApiError";
       this.status = status || 0;
+      this.kind = kind || "http";
+    }
+    // Typical of a sleeping server (free Render instance waking up): worth retrying.
+    get retryable() {
+      return this.kind !== "http" || [502, 503, 504].includes(this.status);
     }
   }
 
@@ -35,9 +41,9 @@
       res = await fetch(BASE + path, opts);
     } catch (e) {
       if (e.name === "AbortError") {
-        throw new ApiError(msg("err.timeout", "Le serveur ne répond pas (délai de 8 secondes dépassé). Réessayez plus tard."));
+        throw new ApiError(msg("err.timeout", "Le serveur ne répond pas (délai de 8 secondes dépassé). Réessayez plus tard."), 0, "timeout");
       }
-      throw new ApiError(msg("err.network", "Impossible de joindre le serveur. Vérifiez votre connexion internet."));
+      throw new ApiError(msg("err.network", "Impossible de joindre le serveur. Vérifiez votre connexion internet."), 0, "network");
     } finally {
       clearTimeout(timer);
     }

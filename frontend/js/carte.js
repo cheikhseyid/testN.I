@@ -30,6 +30,9 @@
     "etat.ok": "En service", "etat.faible": "Débit faible", "etat.panne": "En panne",
     "home.sort_distance": "Triés par distance", "home.sort_quartier": "Triés par quartier",
     "home.locating": "Localisation en cours…", "home.offline": "Données hors ligne",
+    "home.waking": "Le serveur démarre, patientez environ 1 minute…",
+    "home.retrying": "Nouvel essai automatique…",
+    "home.wake_failed": "Le serveur ne répond toujours pas. Réessayez dans quelques minutes.",
     "home.empty": "Aucun point d'eau trouvé.", "home.see_map": "Voir la carte",
     "home.hide_map": "Masquer la carte", "home.map_loading": "Chargement de la carte…",
     "home.map_error": "Impossible de charger la carte. Vérifiez votre connexion.",
@@ -189,6 +192,7 @@
     if (locating && !userPos) parts.push(tr("home.locating"));
     else parts.push(tr(userPos ? "home.sort_distance" : "home.sort_quartier"));
     if (offline) parts.push(tr("home.offline"));
+    if (waking) parts.push(tr("home.retrying"));
     statusEl.textContent = parts.join(" · ");
   }
 
@@ -198,17 +202,42 @@
   }
 
   // ---------- Data ----------
+  // The free Render instance sleeps: its first request can take ~1 min. While it wakes up we keep
+  // the cached list (or a "server is starting" message) and retry on our own, so nobody has to reload.
+  const RETRY_EVERY_MS = 10000;
+  const RETRY_FOR_MS = 90000;
+  let retryStartedAt = null;
+  let retryTimer = null;
+  let waking = false;
+
+  function showWaking() {
+    if (points.length) return; // the cached list stays visible
+    listEl.replaceChildren(el("li", "card muted", tr("home.waking")));
+  }
+
   async function refresh() {
+    clearTimeout(retryTimer);
     try {
       const data = await window.api.get("/points");
       points = data;
       offline = false;
+      waking = false;
+      retryStartedAt = null;
       writeCache(data);
       renderList();
       updateMarkers();
+      if (!alertes.length) loadAlertes(); // probably failed too while the server was asleep
     } catch (e) {
+      if (retryStartedAt === null) retryStartedAt = Date.now();
+      const canRetry = e.retryable && Date.now() - retryStartedAt + RETRY_EVERY_MS <= RETRY_FOR_MS;
       offline = points.length > 0;
-      showError(e.message);
+      waking = canRetry;
+      if (canRetry) {
+        showWaking();
+        retryTimer = setTimeout(refresh, RETRY_EVERY_MS);
+      } else {
+        showError(e.retryable ? tr("home.wake_failed") : e.message);
+      }
       renderStatus();
     }
   }
@@ -362,7 +391,7 @@
   mapBtn.addEventListener("click", toggleMap);
   if (searchEl) searchEl.addEventListener("input", renderList);
   document.addEventListener("i18n:change", () => {
-    if (points.length) renderList(); else renderStatus();
+    if (points.length) renderList(); else { renderStatus(); if (waking) showWaking(); }
     renderBanner();
     mapBtn.textContent = tr(mapEl.hidden ? "home.see_map" : "home.hide_map");
     applyMapLanguage();
