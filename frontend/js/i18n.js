@@ -5,6 +5,8 @@
   const DEFAULT = cfg.DEFAULT_LANG || "fr";
   const RTL = ["ar"];
   const STORE_KEY = "mawjoud.lang";
+  // Bump together with the ?v= of the css/js links in the HTML pages, so browsers fetch the new files.
+  const ASSET_VERSION = "2";
 
   let dict = {};
   let current = DEFAULT;
@@ -44,7 +46,7 @@
   async function setLang(lang) {
     if (!LANGS.includes(lang)) lang = DEFAULT;
     try {
-      const res = await fetch(`i18n/${lang}.json`, { cache: "no-cache" });
+      const res = await fetch(`i18n/${lang}.json?v=${ASSET_VERSION}`, { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       dict = await res.json();
     } catch (e) {
